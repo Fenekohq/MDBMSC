@@ -3,15 +3,197 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>
-    MDBMSC Custom Guide
-  </title>
+  <title>MDBMSC Custom Guide</title>
+
+  <script>
+    (function () {
+      const savedTheme = localStorage.getItem('theme') || 'light';
+      document.documentElement.setAttribute('data-theme', savedTheme);
+      document.documentElement.style.visibility = 'hidden';
+    })();
+
+    window.addEventListener('load', function () {
+      document.documentElement.classList.add('theme-loaded');
+    });
+
+    function toggleTheme() {
+      const root = document.documentElement;
+      const currentTheme = root.getAttribute('data-theme');
+      const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+      root.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+    }
+  </script>
+
+
+  <!--(BASIC CSS STYLES)-->
+  <style>
+    :root[data-theme="light"] {
+      --bg-color: #ffffff;
+      --text-color: #000000;
+      --table-border: #000000;
+      --text-color-rgb: 0, 0, 0;
+      --hidden-bg: #eee;
+      --hidden-text: #000;
+    }
+
+    :root[data-theme="dark"] {
+      --bg-color: #1a1a1a;
+      --text-color: #ffffff;
+      --table-border: #666666;
+      --text-color-rgb: 255, 255, 255;
+      --hidden-bg: #333;
+      --hidden-text: #fff;
+    }
+
+    #themeToggle {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      width: 40px;
+      height: 40px;
+      border-radius: 8px;
+      border: 1px solid var(--text-color);
+      background: var(--bg-color);
+      color: var(--text-color);
+      font-size: 20px;
+      padding: 0;
+      margin: 0;
+      -webkit-appearance: none;
+      appearance: none;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      z-index: 1000;
+    }
+
+    #themeToggle:hover {
+      transform: scale(1.1);
+    }
+
+    #themeToggle:active {
+      transform: scale(0.9);
+    }
+
+    html.theme-loaded {
+      visibility: visible !important;
+    }
+
+    html {
+      height: 100vh;
+      overflow-y: scroll;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      min-height: 100vh;
+      box-sizing: border-box;
+      word-wrap: break-word;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      font-family: Arial;
+      font-size: 16px;
+      line-height: 1.5;
+      padding: 15px;
+      overflow-x: hidden;
+    }
+
+
+    table {
+      margin: 0 auto;
+      width: auto;
+      overflow-x: auto;
+      position: relative;
+      border-collapse: collapse;
+      text-align: center;
+    }
+
+    @media screen and (max-width: 768px) {
+      table {
+        font-size: 14px;
+      }
+    }
+    
+    #themeToggle {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      width: 40px;
+      height: 40px;
+      border-radius: 8px;
+      border: 1px solid var(--text-color);
+      background: var(--bg-color);
+      color: var(--text-color);
+      font-size: 20px;
+      padding: 0;
+      margin: 0;
+      -webkit-appearance: none;
+      appearance: none;
+      transition: all 0.3s ease;
+    }
+</style>
+
 </head>
+
 <body>
 
 <h1 style="text-align: center; font-size: 2em;">MDBMSC Custom Guide</h1>
+</div>
+  <button id="themeToggle" onclick="toggleTheme()" aria-label="Toggle theme" style="z-index: 2000;">◐</button>
 
-<p>Hello Everyone! This is a guide treating my experience with charting.</p>
+<p>Hello Everyone! This website is a tutorial on the Game Muse Dash and specifically the Level Making, a guide treating my experience with charting.<br>
+Check <a href="https://mdmc.moe/" target="_blank">MDMC website</a> and <a href="https://discord.gg/mdmc" target="_blank">MDMC Discord Server</a> to discover those made by the community.</p>
+
+<hr style="margin: 64px auto;">
+
+<h2 style="text-align: center;">Programs Requirements</h2>
+<style>
+  .software-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .software {
+    font-size: 2.5vw;
+  }
+</style>
+
+<div class="software-container">
+<div class="software"><img src="MDMC/Logos/Muse_Dash_Logo.png" alt="Muse_Dash_Logo" width="32px" height"32px"> Muse Dash</div>
+<div class="software"><img src="MDMC/Logos/MelonLoader_Logo.png" alt="MelonLoader_Logo" width="32px" height="32px"> MelonLoader</div>
+<div class="software"><img src="MDMC/Logos/MDBMSC_Logo.png" alt="MDBMSC_Logo" width="32px" height"32px"> MDBMSC Editor</div>
+<div class="software"><img src="MDMC/Logos/Audacity_Logo.png" alt="Audacity_Logo" width="32px" height="32px"> Audacity</div>
+<div class="software"><img src="MDMC/Logos/7-Zip_Logo.png" alt="Audacity_Logo" width="32px" height="32px"> 7-Zip</div>
+</div>
+
+<hr style="margin: 64px auto;">
+
+<h2>Offset with Audacity <img src="MDMC/Logos/Audacity_Logo.png" alt="Audacity_Logo" width="32px" height="32px"></h2>
+
+<p>Download <a href="https://www.audacityteam.org/">Audacity</a>
+
+<h2>Chart File with 7-Zip <img src="MDMC/Logos/7-Zip_Logo.png" alt="Audacity_Logo" width="32px" height="32px"></h2>
+
+<p>Download <a href="https://www.7-zip.org/">7-Zip</a>
+You can also use WinRar but I don't recommend it cuz it has overcomplicated UI.<br>
+<br>
+1. Batch Select<br>
+<li>cover.png</li>
+<li>info.json</li>
+<li>map2 (1-4 if there is)</li>
+<li>music.ogg</li>
+<li>video.mp4 (if cinema)</li>
+<li>cinema.json (if cinema)</li>
+<br>
+2. Right-Click on them<br>
+<br>
+3. Search for 7-Zip Options and "Add to archive"<br>
+<br>
+4. Replace ".zip" to ".mdm" and Click Ok<br>
+</p>
 
 <hr style="margin: 64px auto;">
 
@@ -21,8 +203,683 @@
 Normal Notes: Small & Mediums 1/2 [Monster Notes]<br>
 Emphasis Notes: Larges 1/2, Raider/Hammer, Gemini<br>
 Others: Hold, Gear, Masher, Ghost<br>
-Boss Notes: Boss Projectiles 1-2/3, Boss Gear, Boss Melees 1-2, Boss Mashers 1-2<br>
+Boss Notes: Boss Projectiles 1/2-3, Boss Gear, Boss Melees 1-2, Boss Mashers 1-2<br>
 Pickables: Heart, <ruby>Beam Note<rt>(Blue Note)</rt></ruby><br>
+</div>
+
+<style>
+  .image-container {
+    --scale-factor: 0.3;
+  }
+
+  .image-container img {
+    width: calc(var(--original-width) * var(--scale-factor) * 1px);
+    height: auto;
+  }
+    
+  .image-container-b img {
+    width: calc(var(--original-width) * var(--scale-factor) * 2px);
+    height: auto;
+  }
+  
+  .image-container table td {
+    text-align: center;
+    width: max-content;
+    padding: 4px;
+  }
+  
+  .note-table-container {
+    display: none !important;
+  }
+  
+  .note-table-container.active {
+    display: block !important;
+  }
+</style>
+
+<label for="sceneSelect"><b>Select Scene:</b></label>
+<select id="sceneSelect" onchange="switchScene(this.value)" style="font-size: 1em; padding: 8px;">
+  <option value="space-station">Space Station</option>
+  <option value="retrocity">Retrocity</option>
+  <option value="castle">Castle</option>
+  <option value="rainy-night">Rainy Night</option>
+  <option value="candyland">Candyland</option>
+  <option value="oriental">Oriental</option>
+  <option value="lets-groove">Let's Groove</option>
+  <option value="touhou">Touhou</option>
+  <option value="djmax">DJMAX</option>
+</select>
+
+<script>
+  function switchScene(scene) {
+    document.querySelectorAll('.note-table-container').forEach(el => {
+      el.classList.remove('active');
+    });
+    document.getElementById(scene + '-table').classList.add('active');
+  }
+  
+  window.addEventListener('load', function() {
+    document.getElementById('space-station-table').classList.add('active');
+  });
+</script>
+
+<div id="space-station-table" class="image-container note-table-container">
+<table border="1" class="note-type">
+  <thead>
+    <tr>
+      <th>Lane</th>
+      <th>Small</th>
+      <th>Medium 1</th>
+      <th>Medium 2</th>
+      <th>Large 1</th>
+      <th>Large 2</th>
+      <th>Raider</th>
+      <th>Hammer</th>
+      <th>Boss Projectile 1</th>
+      <th>Boss Projectile 2</th>
+      <th>Boss Projectile 3</th>
+      <th>Boss</th>
+  <tbody>
+    <tr>
+      <th style="color: #00FFFF; font-size: 2em;">A<br>I<br>R</th>
+      <td><img src="MDMC/Fandom/Space_Station/Small(Air).png" style="--original-width: 185;"></td>
+      <td><img src="MDMC/Fandom/Space_Station/Medium_1(Air).png" style="--original-width: 210;"></td>
+      <td><img src="MDMC/Fandom/Space_Station/Medium_2(Air).png" style="--original-width: 279;"></td>
+      <td><img src="MDMC/Fandom/Space_Station/Large_1(Air).png" style="--original-width: 321;"></td>
+      <td><img src="MDMC/Fandom/Space_Station/Large_2(Air).png" style="--original-width: 378;"></td>
+      <td><img src="MDMC/Fandom/Space_Station/Raider(Air).png" style="--original-width: 204;"></td>
+      <td><img src="MDMC/Fandom/Space_Station/Hammer(Air).png" style="--original-width: 291;"></td>
+      <td><img src="MDMC/Fandom/Space_Station/Boss_Projectile_1(Air).png" style="--original-width: 468;"></td>
+      <td><img src="MDMC/Fandom/Space_Station/Boss_Projectile_2(Air).png" style="--original-width: 397;"></td>
+      <td><img src="MDMC/Fandom/Space_Station/Boss_Projectile_3(Air).png" style="--original-width: 328;"></td>
+      <td rowspan="2" class="image-container-b"><img src="MDMC/Fandom/Space_Station/Boss_Standby.gif" style="--original-width: 328;"></td>
+    </tr>
+    <tr>
+      <th style="color: #FF00FF; font-size: 2em;">G<br>R<br>N<br>D</th>
+      <td><img src="MDMC/Fandom/Space_Station/Small(Grnd).png" style="--original-width: 185;"></td>
+      <td><img src="MDMC/Fandom/Space_Station/Medium_1(Grnd).png" style="--original-width: 210;"></td>
+      <td><img src="MDMC/Fandom/Space_Station/Medium_2(Grnd).png" style="--original-width: 279;"></td>
+      <td><img src="MDMC/Fandom/Space_Station/Large_1(Grnd).png" style="--original-width: 321;"></td>
+      <td><img src="MDMC/Fandom/Space_Station/Large_2(Grnd).png" style="--original-width: 378;"></td>
+      <td><img src="MDMC/Fandom/Space_Station/Raider(Grnd).png" style="--original-width: 204;"></td>
+      <td><img src="MDMC/Fandom/Space_Station/Hammer(Grnd).png" style="--original-width: 292;"></td>
+      <td><img src="MDMC/Fandom/Space_Station/Boss_Projectile_1(Grnd).png" style="--original-width: 468;"></td>
+      <td><img src="MDMC/Fandom/Space_Station/Boss_Projectile_2(Grnd).png" style="--original-width: 397;"></td>
+      <td><img src="MDMC/Fandom/Space_Station/Boss_Projectile_3(Grnd).png" style="--original-width: 328;"></td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div id="retrocity-table" class="image-container note-table-container">
+<table border="1" class="note-type">
+  <thead>
+    <tr>
+      <th>Lane</th>
+      <th>Small</th>
+      <th>Medium 1</th>
+      <th>Medium 2</th>
+      <th>Large 1</th>
+      <th>Large 2</th>
+      <th>Raider</th>
+      <th>Hammer</th>
+      <th>Boss Projectile 1</th>
+      <th>Boss Projectile 2</th>
+      <th>Boss Projectile 3</th>
+      <th>Boss</th>
+  <tbody>
+    <tr>
+      <th style="color: #00FFFF; font-size: 2em;">A<br>I<br>R</th>
+      <td><img src="MDMC/Fandom/Retrocity/Small(Air).png" style="--original-width: 185;"></td>
+      <td><img src="MDMC/Fandom/Retrocity/Medium_1(Air).png" style="--original-width: 210;"></td>
+      <td><img src="MDMC/Fandom/Retrocity/Medium_2(Air).png" style="--original-width: 279;"></td>
+      <td><img src="MDMC/Fandom/Retrocity/Large_1(Air).png" style="--original-width: 321;"></td>
+      <td><img src="MDMC/Fandom/Retrocity/Large_2(Air).png" style="--original-width: 378;"></td>
+      <td><img src="MDMC/Fandom/Retrocity/Raider(Air).png" style="--original-width: 204;"></td>
+      <td><img src="MDMC/Fandom/Retrocity/Hammer(Air).png" style="--original-width: 291;"></td>
+      <td><img src="MDMC/Fandom/Retrocity/Boss_Projectile_1(Air).png" style="--original-width: 468;"></td>
+      <td><img src="MDMC/Fandom/Retrocity/Boss_Projectile_2(Air).png" style="--original-width: 397;"></td>
+      <td><img src="MDMC/Fandom/Retrocity/Boss_Projectile_3(Air).png" style="--original-width: 328;"></td>
+      <td rowspan="2" class="image-container-b"><img src="MDMC/Fandom/Retrocity/Boss_Standby.gif" style="--original-width: 328;"></td>
+    </tr>
+    <tr>
+      <th style="color: #FF00FF; font-size: 2em;">G<br>R<br>N<br>D</th>
+      <td><img src="MDMC/Fandom/Retrocity/Small(Grnd).png" style="--original-width: 185;"></td>
+      <td><img src="MDMC/Fandom/Retrocity/Medium_1(Grnd).png" style="--original-width: 210;"></td>
+      <td><img src="MDMC/Fandom/Retrocity/Medium_2(Grnd).png" style="--original-width: 279;"></td>
+      <td><img src="MDMC/Fandom/Retrocity/Large_1(Grnd).png" style="--original-width: 321;"></td>
+      <td><img src="MDMC/Fandom/Retrocity/Large_2(Grnd).png" style="--original-width: 378;"></td>
+      <td><img src="MDMC/Fandom/Retrocity/Raider(Grnd).png" style="--original-width: 204;"></td>
+      <td><img src="MDMC/Fandom/Retrocity/Hammer(Grnd).png" style="--original-width: 292;"></td>
+      <td><img src="MDMC/Fandom/Retrocity/Boss_Projectile_1(Grnd).png" style="--original-width: 468;"></td>
+      <td><img src="MDMC/Fandom/Retrocity/Boss_Projectile_2(Grnd).png" style="--original-width: 397;"></td>
+      <td><img src="MDMC/Fandom/Retrocity/Boss_Projectile_3(Grnd).png" style="--original-width: 328;"></td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div id="castle-table" class="image-container note-table-container">
+<table border="1" class="note-type">
+  <thead>
+    <tr>
+      <th>Lane</th>
+      <th>Small</th>
+      <th>Medium 1</th>
+      <th>Medium 2</th>
+      <th>Large 1</th>
+      <th>Large 2</th>
+      <th>Raider</th>
+      <th>Hammer</th>
+      <th>Boss Projectile 1</th>
+      <th>Boss Projectile 2</th>
+      <th>Boss Projectile 3</th>
+      <th>Boss</th>
+  <tbody>
+    <tr>
+      <th style="color: #00FFFF; font-size: 2em;">A<br>I<br>R</th>
+      <td><img src="MDMC/Fandom/Castle/Small(Air).png" style="--original-width: 185;"></td>
+      <td><img src="MDMC/Fandom/Castle/Medium_1(Air).png" style="--original-width: 210;"></td>
+      <td><img src="MDMC/Fandom/Castle/Medium_2(Air).png" style="--original-width: 279;"></td>
+      <td><img src="MDMC/Fandom/Castle/Large_1(Air).png" style="--original-width: 321;"></td>
+      <td><img src="MDMC/Fandom/Castle/Large_2(Air).png" style="--original-width: 378;"></td>
+      <td><img src="MDMC/Fandom/Castle/Raider(Air).png" style="--original-width: 204;"></td>
+      <td><img src="MDMC/Fandom/Castle/Hammer(Air).png" style="--original-width: 291;"></td>
+      <td><img src="MDMC/Fandom/Castle/Boss_Projectile_1(Air).png" style="--original-width: 468;"></td>
+      <td><img src="MDMC/Fandom/Castle/Boss_Projectile_2(Air).png" style="--original-width: 397;"></td>
+      <td><img src="MDMC/Fandom/Castle/Boss_Projectile_3(Air).png" style="--original-width: 328;"></td>
+      <td rowspan="2" class="image-container-b"><img src="MDMC/Fandom/Castle/Boss.png" style="--original-width: 328;"></td>
+    </tr>
+    <tr>
+      <th style="color: #FF00FF; font-size: 2em;">G<br>R<br>N<br>D</th>
+      <td><img src="MDMC/Fandom/Castle/Small(Grnd).png" style="--original-width: 185;"></td>
+      <td><img src="MDMC/Fandom/Castle/Medium_1(Grnd).png" style="--original-width: 210;"></td>
+      <td><img src="MDMC/Fandom/Castle/Medium_2(Grnd).png" style="--original-width: 279;"></td>
+      <td><img src="MDMC/Fandom/Castle/Large_1(Grnd).png" style="--original-width: 321;"></td>
+      <td><img src="MDMC/Fandom/Castle/Large_2(Grnd).png" style="--original-width: 378;"></td>
+      <td><img src="MDMC/Fandom/Castle/Raider(Grnd).png" style="--original-width: 204;"></td>
+      <td><img src="MDMC/Fandom/Castle/Hammer(Grnd).png" style="--original-width: 292;"></td>
+      <td><img src="MDMC/Fandom/Castle/Boss_Projectile_1(Grnd).png" style="--original-width: 468;"></td>
+      <td><img src="MDMC/Fandom/Castle/Boss_Projectile_2(Grnd).png" style="--original-width: 397;"></td>
+      <td><img src="MDMC/Fandom/Castle/Boss_Projectile_3(Grnd).png" style="--original-width: 328;"></td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div id="rainy-night-table" class="image-container note-table-container">
+<table border="1" class="note-type">
+  <thead>
+    <tr>
+      <th>Lane</th>
+      <th>Small</th>
+      <th>Medium 1</th>
+      <th>Medium 2</th>
+      <th>Large 1</th>
+      <th>Large 2</th>
+      <th>Raider</th>
+      <th>Hammer</th>
+      <th>Boss Projectile 1</th>
+      <th>Boss Projectile 2</th>
+      <th>Boss Projectile 3</th>
+      <th>Boss</th>
+  <tbody>
+    <tr>
+      <th style="color: #00FFFF; font-size: 2em;">A<br>I<br>R</th>
+      <td><img src="MDMC/Fandom/Rainy_Night/Small(Air).png" style="--original-width: 185;"></td>
+      <td><img src="MDMC/Fandom/Rainy_Night/Medium_1(Air).png" style="--original-width: 210;"></td>
+      <td><img src="MDMC/Fandom/Rainy_Night/Medium_2(Air).png" style="--original-width: 279;"></td>
+      <td><img src="MDMC/Fandom/Rainy_Night/Large_1(Air).png" style="--original-width: 321;"></td>
+      <td><img src="MDMC/Fandom/Rainy_Night/Large_2(Air).png" style="--original-width: 378;"></td>
+      <td><img src="MDMC/Fandom/Rainy_Night/Raider(Air).png" style="--original-width: 204;"></td>
+      <td><img src="MDMC/Fandom/Rainy_Night/Hammer(Air).png" style="--original-width: 291;"></td>
+      <td><img src="MDMC/Fandom/Rainy_Night/Boss_Projectile_1(Air).png" style="--original-width: 468;"></td>
+      <td><img src="MDMC/Fandom/Rainy_Night/Boss_Projectile_2(Air).png" style="--original-width: 397;"></td>
+      <td><img src="MDMC/Fandom/Rainy_Night/Boss_Projectile_3(Air).png" style="--original-width: 328;"></td>
+      <td rowspan="2" class="image-container-b"><img src="MDMC/Fandom/Rainy_Night/Boss.png" style="--original-width: 328;"></td>
+    </tr>
+    <tr>
+      <th style="color: #FF00FF; font-size: 2em;">G<br>R<br>N<br>D</th>
+      <td><img src="MDMC/Fandom/Rainy_Night/Small(Grnd).png" style="--original-width: 185;"></td>
+      <td><img src="MDMC/Fandom/Rainy_Night/Medium_1(Grnd).png" style="--original-width: 210;"></td>
+      <td><img src="MDMC/Fandom/Rainy_Night/Medium_2(Grnd).png" style="--original-width: 279;"></td>
+      <td><img src="MDMC/Fandom/Rainy_Night/Large_1(Grnd).png" style="--original-width: 321;"></td>
+      <td><img src="MDMC/Fandom/Rainy_Night/Large_2(Grnd).png" style="--original-width: 378;"></td>
+      <td><img src="MDMC/Fandom/Rainy_Night/Raider(Grnd).png" style="--original-width: 204;"></td>
+      <td><img src="MDMC/Fandom/Rainy_Night/Hammer(Grnd).png" style="--original-width: 292;"></td>
+      <td><img src="MDMC/Fandom/Rainy_Night/Boss_Projectile_1(Grnd).png" style="--original-width: 468;"></td>
+      <td><img src="MDMC/Fandom/Rainy_Night/Boss_Projectile_2(Grnd).png" style="--original-width: 397;"></td>
+      <td><img src="MDMC/Fandom/Rainy_Night/Boss_Projectile_3(Grnd).png" style="--original-width: 328;"></td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div id="candyland-table" class="image-container note-table-container">
+<table border="1" class="note-type">
+  <thead>
+    <tr>
+      <th>Lane</th>
+      <th>Small</th>
+      <th>Medium 1</th>
+      <th>Medium 2</th>
+      <th>Large 1</th>
+      <th>Large 2</th>
+      <th>Raider</th>
+      <th>Hammer</th>
+      <th>Boss Projectile 1</th>
+      <th>Boss Projectile 2</th>
+      <th>Boss Projectile 3</th>
+      <th>Boss</th>
+  <tbody>
+    <tr>
+      <th style="color: #00FFFF; font-size: 2em;">A<br>I<br>R</th>
+      <td><img src="MDMC/Fandom/Candyland/Small(Air).png" style="--original-width: 185;"></td>
+      <td><img src="MDMC/Fandom/Candyland/Medium_1(Air).png" style="--original-width: 210;"></td>
+      <td><img src="MDMC/Fandom/Candyland/Medium_2(Air).png" style="--original-width: 279;"></td>
+      <td><img src="MDMC/Fandom/Candyland/Large_1(Air).png" style="--original-width: 321;"></td>
+      <td><img src="MDMC/Fandom/Candyland/Large_2(Air).png" style="--original-width: 378;"></td>
+      <td><img src="MDMC/Fandom/Candyland/Raider(Air).png" style="--original-width: 204;"></td>
+      <td><img src="MDMC/Fandom/Candyland/Hammer(Air).png" style="--original-width: 291;"></td>
+      <td><img src="MDMC/Fandom/Candyland/Boss_Projectile_1(Air).png" style="--original-width: 468;"></td>
+      <td><img src="MDMC/Fandom/Candyland/Boss_Projectile_2(Air).png" style="--original-width: 397;"></td>
+      <td><img src="MDMC/Fandom/Candyland/Boss_Projectile_3(Air).png" style="--original-width: 328;"></td>
+      <td rowspan="2" class="image-container-b"><img src="MDMC/Fandom/Candyland/Boss_Standby.gif" style="--original-width: 328;"></td>
+    </tr>
+    <tr>
+      <th style="color: #FF00FF; font-size: 2em;">G<br>R<br>N<br>D</th>
+      <td><img src="MDMC/Fandom/Candyland/Small(Grnd).png" style="--original-width: 185;"></td>
+      <td><img src="MDMC/Fandom/Candyland/Medium_1(Grnd).png" style="--original-width: 210;"></td>
+      <td><img src="MDMC/Fandom/Candyland/Medium_2(Grnd).png" style="--original-width: 279;"></td>
+      <td><img src="MDMC/Fandom/Candyland/Large_1(Grnd).png" style="--original-width: 321;"></td>
+      <td><img src="MDMC/Fandom/Candyland/Large_2(Grnd).png" style="--original-width: 378;"></td>
+      <td><img src="MDMC/Fandom/Candyland/Raider(Grnd).png" style="--original-width: 204;"></td>
+      <td><img src="MDMC/Fandom/Candyland/Hammer(Grnd).png" style="--original-width: 292;"></td>
+      <td><img src="MDMC/Fandom/Candyland/Boss_Projectile_1(Grnd).png" style="--original-width: 468;"></td>
+      <td><img src="MDMC/Fandom/Candyland/Boss_Projectile_2(Grnd).png" style="--original-width: 397;"></td>
+      <td><img src="MDMC/Fandom/Candyland/Boss_Projectile_3(Grnd).png" style="--original-width: 328;"></td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div id="oriental-table" class="image-container note-table-container">
+<table border="1" class="note-type">
+  <thead>
+    <tr>
+      <th>Lane</th>
+      <th>Small</th>
+      <th>Medium 1</th>
+      <th>Medium 2</th>
+      <th>Large 1</th>
+      <th>Large 2</th>
+      <th>Raider</th>
+      <th>Hammer</th>
+      <th>Boss Projectile 1</th>
+      <th>Boss Projectile 2</th>
+      <th>Boss Projectile 3</th>
+      <th>Boss</th>
+  <tbody>
+    <tr>
+      <th style="color: #00FFFF; font-size: 2em;">A<br>I<br>R</th>
+      <td><img src="MDMC/Fandom/Oriental/Small(Air).png" style="--original-width: 185;"></td>
+      <td><img src="MDMC/Fandom/Oriental/Medium_1(Air).png" style="--original-width: 210;"></td>
+      <td><img src="MDMC/Fandom/Oriental/Medium_2(Air).png" style="--original-width: 279;"></td>
+      <td><img src="MDMC/Fandom/Oriental/Large_1(Air).png" style="--original-width: 321;"></td>
+      <td><img src="MDMC/Fandom/Oriental/Large_2(Air).png" style="--original-width: 378;"></td>
+      <td><img src="MDMC/Fandom/Oriental/Raider(Air).png" style="--original-width: 204;"></td>
+      <td><img src="MDMC/Fandom/Oriental/Hammer(Air).png" style="--original-width: 291;"></td>
+      <td><img src="MDMC/Fandom/Oriental/Boss_Projectile_1(Air).png" style="--original-width: 468;"></td>
+      <td><img src="MDMC/Fandom/Oriental/Boss_Projectile_2(Air).png" style="--original-width: 397;"></td>
+      <td><img src="MDMC/Fandom/Oriental/Boss_Projectile_3(Air).png" style="--original-width: 328;"></td>
+      <td rowspan="2" class="image-container-b"><img src="MDMC/Fandom/Oriental/Boss.png" style="--original-width: 328;"></td>
+    </tr>
+    <tr>
+      <th style="color: #FF00FF; font-size: 2em;">G<br>R<br>N<br>D</th>
+      <td><img src="MDMC/Fandom/Oriental/Small(Grnd).png" style="--original-width: 185;"></td>
+      <td><img src="MDMC/Fandom/Oriental/Medium_1(Grnd).png" style="--original-width: 210;"></td>
+      <td><img src="MDMC/Fandom/Oriental/Medium_2(Grnd).png" style="--original-width: 279;"></td>
+      <td><img src="MDMC/Fandom/Oriental/Large_1(Grnd).png" style="--original-width: 321;"></td>
+      <td><img src="MDMC/Fandom/Oriental/Large_2(Grnd).png" style="--original-width: 378;"></td>
+      <td><img src="MDMC/Fandom/Oriental/Raider(Grnd).png" style="--original-width: 204;"></td>
+      <td><img src="MDMC/Fandom/Oriental/Hammer(Grnd).png" style="--original-width: 292;"></td>
+      <td><img src="MDMC/Fandom/Oriental/Boss_Projectile_1(Grnd).png" style="--original-width: 468;"></td>
+      <td><img src="MDMC/Fandom/Oriental/Boss_Projectile_2(Grnd).png" style="--original-width: 397;"></td>
+      <td><img src="MDMC/Fandom/Oriental/Boss_Projectile_3(Grnd).png" style="--original-width: 328;"></td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div id="lets-groove-table" class="image-container note-table-container">
+<table border="1" class="note-type">
+  <thead>
+    <tr>
+      <th>Lane</th>
+      <th>Small</th>
+      <th>Medium 1</th>
+      <th>Medium 2</th>
+      <th>Large 1</th>
+      <th>Large 2</th>
+      <th>Raider</th>
+      <th>Hammer</th>
+      <th>Boss Projectile 1</th>
+      <th>Boss Projectile 2</th>
+      <th>Boss Projectile 3</th>
+      <th>Boss</th>
+  <tbody>
+    <tr>
+      <th style="color: #00FFFF; font-size: 2em;">A<br>I<br>R</th>
+      <td><img src="MDMC/Fandom/Let's_Groove/Small(Air).png" style="--original-width: 185;"></td>
+      <td><img src="MDMC/Fandom/Let's_Groove/Medium_1(Air).png" style="--original-width: 210;"></td>
+      <td><img src="MDMC/Fandom/Let's_Groove/Medium_2(Air).png" style="--original-width: 279;"></td>
+      <td><img src="MDMC/Fandom/Let's_Groove/Large_1(Air).png" style="--original-width: 321;"></td>
+      <td><img src="MDMC/Fandom/Let's_Groove/Large_2(Air).png" style="--original-width: 378;"></td>
+      <td><img src="MDMC/Fandom/Let's_Groove/Raider(Air).png" style="--original-width: 204;"></td>
+      <td><img src="MDMC/Fandom/Let's_Groove/Hammer(Air).png" style="--original-width: 291;"></td>
+      <td><img src="MDMC/Fandom/Let's_Groove/Boss_Projectile_1(Air).png" style="--original-width: 468;"></td>
+      <td><img src="MDMC/Fandom/Let's_Groove/Boss_Projectile_2(Air).png" style="--original-width: 397;"></td>
+      <td><img src="MDMC/Fandom/Let's_Groove/Boss_Projectile_3(Air).png" style="--original-width: 328;"></td>
+      <td rowspan="2" class="image-container-b"><img src="MDMC/Fandom/Let's_Groove/Boss.png" style="--original-width: 328;"></td>
+    </tr>
+    <tr>
+      <th style="color: #FF00FF; font-size: 2em;">G<br>R<br>N<br>D</th>
+      <td><img src="MDMC/Fandom/Let's_Groove/Small(Grnd).png" style="--original-width: 185;"></td>
+      <td><img src="MDMC/Fandom/Let's_Groove/Medium_1(Grnd).png" style="--original-width: 210;"></td>
+      <td><img src="MDMC/Fandom/Let's_Groove/Medium_2(Grnd).png" style="--original-width: 279;"></td>
+      <td><img src="MDMC/Fandom/Let's_Groove/Large_1(Grnd).png" style="--original-width: 321;"></td>
+      <td><img src="MDMC/Fandom/Let's_Groove/Large_2(Grnd).png" style="--original-width: 378;"></td>
+      <td><img src="MDMC/Fandom/Let's_Groove/Raider(Grnd).png" style="--original-width: 204;"></td>
+      <td><img src="MDMC/Fandom/Let's_Groove/Hammer(Grnd).png" style="--original-width: 292;"></td>
+      <td><img src="MDMC/Fandom/Let's_Groove/Boss_Projectile_1(Grnd).png" style="--original-width: 468;"></td>
+      <td><img src="MDMC/Fandom/Let's_Groove/Boss_Projectile_2(Grnd).png" style="--original-width: 397;"></td>
+      <td><img src="MDMC/Fandom/Let's_Groove/Boss_Projectile_3(Grnd).png" style="--original-width: 328;"></td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div id="touhou-table" class="image-container note-table-container">
+<table border="1" class="note-type">
+  <thead>
+    <tr>
+      <th>Lane</th>
+      <th>Small</th>
+      <th>Medium 1</th>
+      <th>Medium 2</th>
+      <th>Large 1</th>
+      <th>Large 2</th>
+      <th>Raider</th>
+      <th>Hammer</th>
+      <th>Boss Projectile 1</th>
+      <th>Boss Projectile 2</th>
+      <th>Boss Projectile 3</th>
+      <th>Boss</th>
+  <tbody>
+    <tr>
+      <th style="color: #00FFFF; font-size: 2em;">A<br>I<br>R</th>
+      <td><img src="MDMC/Fandom/Touhou/Small(Air).png" style="--original-width: 185;"></td>
+      <td><img src="MDMC/Fandom/Touhou/Medium_1(Air).png" style="--original-width: 210;"></td>
+      <td><img src="MDMC/Fandom/Touhou/Medium_2(Air).png" style="--original-width: 279;"></td>
+      <td><img src="MDMC/Fandom/Touhou/Large_1(Air).png" style="--original-width: 321;"></td>
+      <td><img src="MDMC/Fandom/Touhou/Large_2(Air).png" style="--original-width: 378;"></td>
+      <td><img src="MDMC/Fandom/Touhou/Raider(Air).png" style="--original-width: 204;"></td>
+      <td><img src="MDMC/Fandom/Touhou/Hammer(Air).png" style="--original-width: 291;"></td>
+      <td><img src="MDMC/Fandom/Touhou/Boss_Projectile_1(Air).png" style="--original-width: 468;"></td>
+      <td><img src="MDMC/Fandom/Touhou/Boss_Projectile_2(Air).png" style="--original-width: 397;"></td>
+      <td><img src="MDMC/Fandom/Touhou/Boss_Projectile_3(Air).png" style="--original-width: 328;"></td>
+      <td rowspan="2" class="image-container-b"><img src="MDMC/Fandom/Touhou/Boss_Standby.gif" style="--original-width: 328;"></td>
+    </tr>
+    <tr>
+      <th style="color: #FF00FF; font-size: 2em;">G<br>R<br>N<br>D</th>
+      <td><img src="MDMC/Fandom/Touhou/Small(Grnd).png" style="--original-width: 185;"></td>
+      <td><img src="MDMC/Fandom/Touhou/Medium_1(Grnd).png" style="--original-width: 210;"></td>
+      <td><img src="MDMC/Fandom/Touhou/Medium_2(Grnd).png" style="--original-width: 279;"></td>
+      <td><img src="MDMC/Fandom/Touhou/Large_1(Grnd).png" style="--original-width: 321;"></td>
+      <td><img src="MDMC/Fandom/Touhou/Large_2(Grnd).png" style="--original-width: 378;"></td>
+      <td><img src="MDMC/Fandom/Touhou/Raider(Grnd).png" style="--original-width: 204;"></td>
+      <td><img src="MDMC/Fandom/Touhou/Hammer(Grnd).png" style="--original-width: 292;"></td>
+      <td><img src="MDMC/Fandom/Touhou/Boss_Projectile_1(Grnd).png" style="--original-width: 468;"></td>
+      <td><img src="MDMC/Fandom/Touhou/Boss_Projectile_2(Grnd).png" style="--original-width: 397;"></td>
+      <td><img src="MDMC/Fandom/Touhou/Boss_Projectile_3(Grnd).png" style="--original-width: 328;"></td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div id="djmax-table" class="image-container note-table-container">
+<table border="1" class="note-type">
+  <thead>
+    <tr>
+      <th>Lane</th>
+      <th>Small</th>
+      <th>Medium 1</th>
+      <th>Medium 2</th>
+      <th>Large 1</th>
+      <th>Large 2</th>
+      <th>Raider</th>
+      <th>Hammer</th>
+      <th>Boss Projectile 1</th>
+      <th>Boss Projectile 2</th>
+      <th>Boss Projectile 3</th>
+      <th>Boss</th>
+  <tbody>
+    <tr>
+      <th style="color: #00FFFF; font-size: 2em;">A<br>I<br>R</th>
+      <td><img src="MDMC/Fandom/DJMAX/Small(Air).png" style="--original-width: 185;"></td>
+      <td><img src="MDMC/Fandom/DJMAX/Medium_1(Air).png" style="--original-width: 210;"></td>
+      <td><img src="MDMC/Fandom/DJMAX/Medium_2(Air).png" style="--original-width: 279;"></td>
+      <td><img src="MDMC/Fandom/DJMAX/Large_1(Air).png" style="--original-width: 321;"></td>
+      <td><img src="MDMC/Fandom/DJMAX/Large_2(Air).png" style="--original-width: 378;"></td>
+      <td><img src="MDMC/Fandom/DJMAX/Raider(Air).png" style="--original-width: 204;"></td>
+      <td><img src="MDMC/Fandom/DJMAX/Hammer(Air).png" style="--original-width: 291;"></td>
+      <td><img src="MDMC/Fandom/DJMAX/Boss_Projectile_1(Air).png" style="--original-width: 468;"></td>
+      <td><img src="MDMC/Fandom/DJMAX/Boss_Projectile_2(Air).png" style="--original-width: 397;"></td>
+      <td><img src="MDMC/Fandom/DJMAX/Boss_Projectile_3(Air).png" style="--original-width: 328;"></td>
+      <td rowspan="2" class="image-container-b"><img src="MDMC/Fandom/DJMAX/Boss_Standby.gif" style="--original-width: 328;"></td>
+    </tr>
+    <tr>
+      <th style="color: #FF00FF; font-size: 2em;">G<br>R<br>N<br>D</th>
+      <td><img src="MDMC/Fandom/DJMAX/Small(Grnd).png" style="--original-width: 185;"></td>
+      <td><img src="MDMC/Fandom/DJMAX/Medium_1(Grnd).png" style="--original-width: 210;"></td>
+      <td><img src="MDMC/Fandom/DJMAX/Medium_2(Grnd).png" style="--original-width: 279;"></td>
+      <td><img src="MDMC/Fandom/DJMAX/Large_1(Grnd).png" style="--original-width: 321;"></td>
+      <td><img src="MDMC/Fandom/DJMAX/Large_2(Grnd).png" style="--original-width: 378;"></td>
+      <td><img src="MDMC/Fandom/DJMAX/Raider(Grnd).png" style="--original-width: 204;"></td>
+      <td><img src="MDMC/Fandom/DJMAX/Hammer(Grnd).png" style="--original-width: 292;"></td>
+      <td><img src="MDMC/Fandom/DJMAX/Boss_Projectile_1(Grnd).png" style="--original-width: 468;"></td>
+      <td><img src="MDMC/Fandom/DJMAX/Boss_Projectile_2(Grnd).png" style="--original-width: 397;"></td>
+      <td><img src="MDMC/Fandom/DJMAX/Boss_Projectile_3(Grnd).png" style="--original-width: 328;"></td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<h2>Scenes/Stages</h2>
+
+<div style="display: grid; grid-template-columns: 1fr 1fr;">
+
+<div>
+<span style="text-decoration: underline; font-weight: bold; font-size: 1.5em;">
+Space Station
+</span>
+<p>
+Scene ID: 01<br>
+Genre: Electronic, EDM, Techno, Mix, Hardstyle, House<br>
+Energy: Twilight Inside<br>
+Difficulty Peak: 13<br>
+Tags: <span style="font-size: x-small;">
+Machine, Industry, High Tech, Modern, Cybernetic, Device, Computer, Enginery, Mecha, Science, Automation</span><br>
+</p>
+<img src="MDMC/Fandom/Space_Station/Scene_01.png" alt="Space_Station" width="640px" height="360px">
+</div>
+
+<div>
+<span style="text-decoration: underline; font-weight: bold; font-size: 1.5em;">
+Retrocity
+</span>
+<p>
+Scene ID: 02<br>
+Genre: Lofi, Future, Glitch<br>
+Energy: Twilight Outside<br>
+Difficulty Peak: 10<br>
+Tags: <span style="font-size: x-small;">
+Street, Pixel, Relax, Regulated Mood, Sleep, Soft, Chill, Minimal, Nostalgic, Slow, Wavy, Smooth</span><br>
+</p>
+<img src="MDMC/Fandom/Retrocity/Scene_02.png" alt="Retrocity" width="640px" height="360px">
+
+</div>
+
+<div>
+<span style="text-decoration: underline; font-weight: bold; font-size: 1.5em;">
+Castle
+</span>
+<p>
+Scene ID: 03<br>
+Genre: Rock, Metal, Gothic, Epic, Orchestral, Dubstep, Trance, Speedcore<br>
+Energy: Dark Inside<br>
+Difficulty Peak: 13<br>
+Tags: <span style="font-size: x-small;">
+Death, Depression, Piano, Heroic, Mythical, Middle Age, Shadow, Devil, Demon, Flame, Brutal, Nightmare</span><br>
+</p>
+<img src="MDMC/Fandom/Castle/Scene_03.png" alt="Castle" width="640px" height="360px">
+</div>
+
+<div>
+<span style="text-decoration: underline; font-weight: bold; font-size: 1.5em;">
+Rainy Night
+</span>
+<p>
+Scene ID: 04<br>
+Genre: Jazz, Rap, Acoustic<br>
+Energy: Dark Outside<br>
+Difficulty Peak: 11<br>
+Tags: <span style="font-size: x-small;">
+Street, Piano, Urban, Sexual, Car, City, Walk, Loneliness, Erotic, Luxury, </span><br>
+</p>
+<img src="MDMC/Fandom/Rainy_Night/Scene_04.png" alt="Rainy_Night" width="640px" height="360px">
+</div>
+
+<div>
+<span style="text-decoration: underline; font-weight: bold; font-size: 1.5em;">
+Candyland
+</span>
+<p>
+Scene ID: 05<br>
+Genre: Happy<br>
+Energy: Bright Outside<br>
+Difficulty Peak: 12<br>
+Tags: <span style="font-size: x-small;">
+Cheering, Positive, Joyful, Utopia, Sugar, Smile, Pleasant, Sparkling, Sunny</span><br>
+</p>
+<img src="MDMC/Fandom/Candyland/Scene_05.png" alt="Candyland" width="640px" height="360px">
+</div>
+
+<div>
+<span style="text-decoration: underline; font-weight: bold; font-size: 1.5em;">
+Oriental
+</span>
+<p>
+Scene ID: 06<br>
+Genre: Hogaku(Traditional Japanese)<br>
+Energy: Twilight Outside<br>
+Difficulty Peak: 12<br>
+Tags: <span style="font-size: x-small;">
+Eastern, Japanese, Cultural, Architecture, Wood, <br>
+</p>
+<img src="MDMC/Fandom/Oriental/Scene_06.png" alt="Oriental" width="640px" height="360px">
+</div>
+
+<div>
+<span style="text-decoration: underline; font-weight: bold; font-size: 1.5em;">
+Let's Groove
+</span>
+<p>
+Scene ID: 07<br>
+Genre: Video Game<br>
+Energy: Bright Outside<br>
+Difficulty Peak: 12<br>
+Tags: <span style="font-size: x-small;">
+Collab, Futuristic, Park, Arcade</span><br>
+</p>
+<img src="MDMC/Fandom/Let's_Groove/Scene_07.png" alt="Let's Groove" width="640px" height="360px">
+</div>
+
+<div>
+<span style="text-decoration: underline; font-weight: bold; font-size: 1.5em;">
+Touhou
+</span>
+<p>
+Scene ID: 08<br>
+Genre: Touhou, Fantasy<br>
+Energy: Twilight Outside<br>
+Difficulty Peak: 12<br>
+Tags: <span style="font-size: x-small;">
+Forest, Magic, Nature, Eastern, </span><br>
+</p>
+<img src="MDMC/Fandom/Touhou/Scene_08.png" alt="Touhou" width="640px" height="360px">
+</div>
+
+<div>
+<span style="text-decoration: underline; font-weight: bold; font-size: 1.5em;">
+DJMAX
+</span>
+<p>
+Scene ID: 09<br>
+Genre: Cartoon<br>
+Energy: Twilight Outside<br>
+Difficulty Peak: 12<br>
+Tags: <span style="font-size: x-small;">
+Collab, </span><br>
+</p>
+<img src="MDMC/Fandom/DJMAX/Scene_09.png" alt="DJMAX" width="640px" height="360px">
+</div>
+
+<div>
+<span style="text-decoration: underline; font-weight: bold; font-size: 1.5em;">
+Miku
+</span>
+<p>
+Scene ID: 10<br>
+Genre: Vocaloid<br>
+Energy: Bright Inside<br>
+Difficulty Peak: 12<br>
+Tags: <span style="font-size: x-small;">
+Collab, Idol, Show, Live, Fans, Action, Event, Virtual</span><br>
+</p>
+<img src="MDMC/Fandom/Miku/Scene_10.png" alt="Miku" width="640px" height="360px">
+</div>
+
+<div>
+<span style="text-decoration: underline; font-weight: bold; font-size: 1.5em;">
+Warriorland
+</span>
+<p>
+Scene ID: 11?<br>
+Genre: Troll<br>
+Energy: -<br>
+Difficulty Peak: -<br>
+Tags: <span style="font-size: x-small;">
+Unusable, Special, Uncommon</span><br>
+</p>
+<img src="MDMC/Fandom/Scene_11.png" alt="Miku" width="640px" height="360px">
+</div>
+
+<div>
+<span style="text-decoration: underline; font-weight: bold; font-size: 1.5em;">
+Chinese
+</span>
+<p>
+Scene ID: 12?<br>
+Genre: Guoyue(Traditional Chinese)<br>
+Energy: Bright Outside<br>
+Difficulty Peak: ?<br>
+Tags: <span style="font-size: x-small;">
+Eastern</span><br>
+</p>
+<img src="MDMC/Fandom/Chinese/Scene_12.png" alt="Temple" width="640px" height="360px">
+</div>
+
 </div>
 
 <hr style="margin: 64px auto;">
@@ -31,39 +888,39 @@ Pickables: Heart, <ruby>Beam Note<rt>(Blue Note)</rt></ruby><br>
 
 <p>Lowest to Highest by Impact Power</p>
 
-<div class="list" style="text-align: center; font-size: large;">
+<div class="list" style="display: flex; flex-direction: row; flex-wrap: wrap; align-content: space-evenly; gap: 32px; justify-content: space-between: center; font-size: large;">
 
-<div>
+<div style="text-align: center;">
 Level X: Hold, Gear, Ghost<br>
 <img src="MDMC/Level_X.png" alt="Level_X">
 </div>
 
-<div>
+<div style="text-align: center;">
 Level 0: Heart, Beam Note<br>
 <img src="MDMC/Level_0.png" alt="Level_0">
 </div>
 
-<div>
+<div style="text-align: center;">
 Level 1: Small<br>
 <img src="MDMC/Level_1.png" alt="Level_1">
 </div>
 
-<div>
+<div style="text-align: center;">
 Level 2: Mediums, Projectiles<br>
 <img src="MDMC/Level_2.png" alt="Level_2">
 </div>
 
-<div>
+<div style="text-align: center;">
 Level 3: Larges<br>
 <img src="MDMC/Level_3.png" alt="Level_3">
 </div>
 
-<div>
+<div style="text-align: center;">
 Level 4: Raider(grnd)/Hammer(air)<br>
 <img src="MDMC/Level_4.png" alt="Level_4">
 </div>
 
-<div>
+<div style="text-align: center;">
 Level 5: Gemini, Raider(air)/Hammer(grnd), Masher, Boss Melees & Mashers<br>
 <img src="MDMC/Level_5.png" alt="Level_6">
 </div>
@@ -74,21 +931,32 @@ Level 5: Gemini, Raider(air)/Hammer(grnd), Masher, Boss Melees & Mashers<br>
 
 <h3>Consider those Statements</h3>
 
+<div style="display: flex; justify-content: space-between;">
+
+<div>
 <p>{Medium 1} {Large 1} <ruby>{Raider}<rt>(maybe)</rt></ruby> and {Projectile 2} as married couple Males ♂</p>
 <img src="MDMC/Male.png" alt="Male">
+</div>
 
+<div>
 <p>{Medium 2} {Large 2} <ruby>{Hammer}<rt>(maybe)</rt></ruby> and {Projectile 3} as married couple Females ♀</p>
 <img src="MDMC/Female.png" alt="Female">
+</div>
 
+</div>
+
+<div style="text-align: center;">
 <p>{Small} {Hold} {Projectile 1} {Ghost} {Gemini} {Masher} as assisted Kids Hermaphroditic or Transgender ⚧</p>
 <img src="MDMC/Hermaphroditic.png" alt="Hermaphroditic">
-<br>
+</div>
 
+<div style="margin-top: 64px;">
 <p>1st and 2nd groups consist of note types Wombo Combos, it can progress at a different scale depending on the length, however they aren't stuck in prisonners walls</p>
-<p>3rd group consist of miscellaneous useful types, lighten stream visually, slice as a mini part on its own, and also doing well a celibate.
+<p>3rd group consist of miscellaneous useful types, lighten stream visually, slice as a mini part on its own, and also doing well a celibate</p>
 <p>The ground lane should in most cases be a little bit more dominant than the air lane by like 10-15% in term of stuff</p>
-
-<p>I’am gonna use the vertical view which was the only one at the old times from the genesis.</p>
+<p>Ground and air Lanes are also available for effects perfect timestamp position, boss mashers and melees can as well be on boss lane but not air though</p>
+<p>I’am gonna use the vertical view which was the only one at the old times from the genesis</p>
+</div>
 
 <hr style="margin: 64px auto;">
 
@@ -131,7 +999,8 @@ Translation{8}:
 <ruby>{4-2-2}<rt>(Passive-Dynamic)</rt></ruby>
 <ruby>{2-2-4}<rt>(Dynamic-Passive)</rt></ruby><br>
 Notes Variety: 1 to <ruby>2<rt>Facultative Semi-Equal</rt></ruby><br>
-Ground-Air Usage: Equal or Semi-Equal</dd>
+Ground-Air Usage: Equal or Semi-Equal<br>
+Main Lane: Start Note</dd>
 <br>
 
 <dt><b><u>Passive</u></b></dt>
@@ -146,7 +1015,8 @@ Translation{8}:
 <ruby>{2-1-3-1-1}<rt>(Passive)</rt></ruby> or  
 <ruby>{2-1-1-2-1-1}<rt>(Dynamic)</rt></ruby><br>
 Note Variety: 2<br>
-Ground-Air Usage: Favorist on Passive - Equal on Dynamic</dd>
+Ground-Air Usage: Favorist on Passive - Equal on Dynamic<br>
+Main Lane: Lighter Notes</dd>
 <br>
 <dt><b><u>Dynamic</u></b></dt>
 <dd>Difficulty: Harder<br>
@@ -187,14 +1057,100 @@ In the negative multiplication which imply streams impairs values are flawed.
 the grid is supposed to be 16/4 but i'am talking like it's 8/4 which is more simpler to image lane swap.
 So i could write it that way {4-1-3 S} S for stream and {8-8} being {4-4 C} C for complete, entire measure so to speak.</p>
 
+<p>Gemini at half are better fitting on passive pair and dynamic impair, not a random fact they exactly reverse mirror at middle which cover good symmetry.
+That's for the structure quadruples turning triples which for the most part are aligned or triangled (linear or accent).</p>
+
+<div style="display: grid; grid-template-columns: 1fr 1fr;">
+
+<div>
+<h3>Gemini Pair Passive</h3>
+<p>Linear Version</p>
+<img src="MDMC/Gemini_Pair_Passive.png" alt="Gemini_Pair_Passive" style="width: 200px; height: 280px">
+</div>
+
+<div>
+<h3>Gemini Impair Dynamic</h3>
+<p>Triangular Version</p>
+<img src="MDMC/Gemini_Impair_Dynamic.png" alt="Gemini_Impair_Dynamic" style="width: 200px; height: 280px">
+</div>
+
+</div>
+
+<p>Most of the time holds works on Pairs arrangements</p>
+
+<div style="display: grid; grid-template-columns: 1fr 1fr 1fr;">
+
+<div>
+<h3>Hold Measure</h3>
+<p>Long Length</p>
+<img src="MDMC/Hold_Measure.png" alt="Hold_Measure" style="width: 200px; height: 280px">
+</div>
+
+<div>
+<h3>Hold Pair Passive</h3>
+<p>Medium Length</p>
+<img src="MDMC/Hold_Pair_Passive.png" alt="Hold_Pair_Passive" style="width: 200px; height: 280px">
+</div>
+
+<div>
+<h3>Hold Pair Dynamic</h3>
+<p>Short Legth</p>
+<img src="MDMC/Hold_Pair_Dynamic.png" alt="Hold_Pair_Dynamic" style="width: 200px; height: 280px">
+</div>
+
+</div>
+
+<hr style="margin: 64px auto;">
+
+<h3>Lanes & Directions</h3>
+
+<p>Directions concern Smalls and Mediums,<br>
+As well as eventually [Raiders] and [Hammers] although they are fixed types.<br>
+[Raider] is animated down to up and [Hammer] up to down, reversal are a special case 97% not to be used.<br>
+Directions contain a difficulty value at reading!<br>
+
+<table border="1" style="table-layout: fixed; width: 60%;">
+  <thead>
+    <tr>
+      <th>Lane</th>
+      <th>No Direction</th>
+      <th>Ease</th>
+      <th>Cross</th>
+      <th>All Up</th>
+      <th>All Down</th>
+      <th>Creative</th>
+    </tr>
+  </thead>
+  <tbody style="font-size: 2em;">
+    <tr style="color: #00FFFF;">
+      <td>AIR</td>
+      <td>⇨</td>
+      <td>⇩</td>
+      <td>⇧</td>
+      <td>⇧</td>
+      <td>⇩</td>
+      <td>?</td>
+    </tr>
+    <tr style="color: #FF00FF;">
+      <td>GRND</td>
+      <td>⇨</td>
+      <td>⇧</td>
+      <td>⇩</td>
+      <td>⇧</td>
+      <td>⇩</td>
+      <td>?</td>
+    </tr>
+  </tbody>
+</table>
 
 <hr style="margin: 64px auto;">
 
 <h3>Mirroring</h3>
+
 <p>Ctrl+R is a shortcut to reverse the selected stuff [ground to air] and [air to ground].</p>
 
-<p>We know that an impair value of lane usage result to a lane swap.<br>
-The lane swap for Impair Dynamic is done earlier than it is supposed to do to mirror properly measure by measure.<br>
+<p>An impair value lane use result to a lane swap for the next section.<br>
+The lane swap for Pair Passive Impair Dynamic is done 2 times earlier, 4 times for Pair Dynamic.<br>
 We can count {Impair Passive} and {Pair Passive-Dynamic/Dynamic-Passive} as having this property but we can also mix up to able a total of 4x4 options.<br>
 <br>
 Basically it's one of the half measure consisting of a main lane and swapping to another with a balanced pair dynamic.
@@ -211,12 +1167,12 @@ If a measure main lane is A it goes like this:<br>
     </tr>
   </thead>
   <tbody>
-    <tr style="font-size: x-large;">
+    <tr style="color: #00FFFF; font-size: x-large;">
       <td></td>
       <td>BB</td>
       <td></td>
     </tr>
-    <tr style="font-size: x-large;">
+    <tr style="color: #FF00FF; font-size: x-large;">
       <td>AAAA</td>
       <td></td>
       <td>AA</td>
@@ -238,14 +1194,14 @@ If a measure main lane is A it goes like this:<br>
     </tr>
   </thead>
   <tbody>
-    <tr style="font-size: x-large;">
+    <tr style="color: #00FFFF; font-size: x-large;">
       <td></td>
       <td>B</td>
       <td></td>
       <td>BB</td>
       <td></td>
     </tr>
-    <tr style="font-size: x-large;">
+    <tr style="color: #FF00FF; font-size: x-large;">
       <td>AA</td>
       <td></td>
       <td>A</td>
@@ -272,7 +1228,8 @@ I consider their ability to reset lane change making pure symmetry unconsequenci
 
 <h3>Grids</h3>
 
-<p>In the process of beats placement, we encounter 4 grid values with each synchronizing perfectly with bold bars.</p>
+<p>In the process of beats placement, we encounter 4 grid values with each synchronizing perfectly with bold bars.
+We can double or quadruples even more but that's for effects, beside them no other grid is used.</p>
 
 <table border="1" style="text-align: center; font-size: large;">
   <thead>
@@ -375,11 +1332,19 @@ I consider their ability to reset lane change making pure symmetry unconsequenci
 
 <hr style="margin: 64px auto;">
 
+<h3>Gemini/Fakes [Note Type/Same Arrangement]</h3>
+
+<p>Gemini is a double tap from the 2 lanes [air] and [grnd] fractionner, a good way to imply a transitive mirror.<br>
+By Fake I mean the same double tap principle but with different note type which can be more wild, theses have different properties and may varies in positions.</p>
+
+<hr style="margin: 64px auto;">
+
 <h3>Hold [Note Type]</h3>
 
-<p>The Hold in the air is the default lane for this note although this could be to debate.
+<p>The Hold in the air is the default lane for this note although this could be to debate with context.<br>
 Why ? Cuz the main lane is where it's the most active and the current tap notes would mean to be on the ground.
-An air hold end tail makes you fall instantly to the ground but with late click with grnd hold air ennemy end tail physics can makes you jump</p>
+An [air hold] end tail makes you fall instantly to the ground but with late click<br>
+With [grnd hold] end tail + [air ennemy] physics can makes you jump attack so placing a gear just after is issued.</p>
 
 <p>Holds are versatiles and play a major role on each part being different from others as being one of the most creative note cuz they have a unique property, they can signature pretty much all sections but not being mixed up with bad spacing, though they are many type of them.
 They are almost always followed by a tap note on the end tail at the opposite lane.
@@ -460,19 +1425,97 @@ They could also signature a middle point on triplets.<br>
 Boss gears does have a summoning animation at the front which make them harder to read and dodge.
 On the beginning of the boss section we don't use gears instantly.<br>
 It is plausible to put one on the 2nd 3rd 4th as a gemini cutter like if possible.
+
+<hr style="margin: 64px auto;">
+
+<h3>Masher [Note Type]</h3>
+
+<p>
+Masher on the ground lane is waiting for you.<br>
+Masher on the air lane is coming for you.<br>
+<br>
+Masher tail should be spaced by one bold bar long especially for high BPM<br>
+The Counter might be oscillating in game cuz of FPS drops</p>
+
+<h4>Align Hit Count with song Meaning</h4>
+<table border="1" style="text-align: center; font-size: large;">
+  <tbody>
+    <tr>
+      <th>Max Hit Count</th>
+      <td>1 Hit</td>
+      <td>2 Hits</td>
+      <td>3 Hits</td>
+      <td>4 Hits</td>
+      <td>5 Hits</td>
+      <td>6 Hits</td>
+      <td>7 Hits</td>
+      <td>8 Hits</td>
+      <td>9 Hits</td>
+      <td>10 Hits</td>
+    </tr>
+    <tr>
+      <th>Second Length</th>
+      <td>0.00 ~ 0.08</td>
+      <td>0.09 ~ 0.11</td>
+      <td>0.12 ~ 0.16</td>
+      <td>0.17 ~ 0.19</td>
+      <td>0.20 ~ 0.24</td>
+      <td>0.25 ~ 0.27</td>
+      <td>0.28 ~ 0.31</td>
+      <td>0.32 ~ 0.37</td>
+      <td>0.38 ~ 0.39</td>
+      <td>0.40 ~ 0.45</td>
+    </tr>
+  </tbody>
+</table>
+
 <hr style="margin: 64px auto;">
 
 <h3>Journey</h3>
 
 <p>Section difficulties should feet the song intensity and the target difficulty.</p>
 <p>The start of a chart shouldn't be the hardest part even if the opening of the song is rough.</p>
-
 <p>If a transition part happen to be somewhere at a 4th measure, it's often subject to a pattern buff.</p>
+
+<div style="text-align: center;">Example of Note Types and Difficulty Progression</div>
+<table border="1" style="text-align: center; font-size: large;">
+  <thead>
+    <tr>
+      <th colspan="2">Opening</th>
+      <th>Introduction</th>
+      <th>Middle</th>
+      <th>Transition</th>
+      <th colspan="2">Ending</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr style="font-size: medium;">
+      <td>Nothing - Blue Note - Gear - Long Hold</td>
+      <td>Small - Mediums</td>
+      <td>Mediums - Larges</td>
+      <td>Projectiles - Mediums - Larges - Raider/Hammers - Gemini<span style="font-size:x-small;">(Little)</span></td>
+      <td>Nothing - Blue Note - Small - Gear - Long Hold</td>
+      <td>Projectile - Small - Mediums - Larges - Raider - Hammer - Gemini</td>
+      <td>Nothing - Gear - Long Hold</td>
+    </tr>
+    <tr>
+      <td>Break</td>
+      <td>Easy</td>
+      <td>Normal</td>
+      <td>Hard (Boss Phase 2)</td>
+      <td>Break/Easy</td>
+      <td>Insane(Boss Phase 1)</td>
+      <td>Break/Easy</td>
+    </tr>
+  </tbody>
+</table>
+<hr style="margin: 64px auto;">
 
 <h2>Polyrhythm</h2>
 
-<p>Polyrhythm consist of theming instruments beats with a specific lane and note type. It's a sort of ruling structure following 2 to 4 tracks at the same time.
-This type of charting imply a significant number of double taps.
+<p>Polyrhythm consist of theming instruments beats with a specific lane and note type.<br>
+It's a sort of ruling structure following 2 to 4 tracks at the same time.<br>
+This type of charting imply a significant number of double taps.</p>
 
 
 <table border="1" style="text-align: center; font-size: large;">
@@ -498,55 +1541,96 @@ This type of charting imply a significant number of double taps.
 
 <hr style="margin: 64px auto;">
 
+<h2>Boss</h2>
 
-<h2>Overlaps</h2>
+<p>
+Boss projectiles 1/2&3 are used separately unless its a special section.<br>
+Melee and Mashers have an implicit Forward animation.<br>
+It's same with projectiles cuz as they spawn and move until tap there is an interval.<br>
+They can conflict with each other and produce unreadable glitches.<br>
+</p>
 
-<p>Ghost with monster direction, Tap Hold</p>
-
-<p>Double Directions Monsters Notes </p>
-
-<p></p>
+<h4>Boss Animations Average Intervals Spacing</h4>
+<table border="1" style="text-align: center; font-size: large;">
+  <thead>
+    <tr>
+      <th>Boss Note</th>
+      <th>Entrance</th>
+      <th>Exit</th>
+      <th>[Ready/End] Phase [1/2]</th>
+      <th>Melee 1, Masher [1/2]</th>
+      <th>Melee 2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Max Second Length</td>
+      <td>Scene Dependance</td>
+      <td>Scene Dependance</td>
+      <td>~O.8-1~</td>
+      <td>~1.3-1.5~</td>
+      <td>0.3~0.5</td>
+    </tr>
+    <tr>
+      <td>Bars Values</td>
+      <td><ruby>2 Bold Bars<rt>(&lt;140BPM~)</rt><ruby> <ruby>4 Bold Bars<rt>(&gt;140BPM)</rt><ruby></td>
+      <td>2/4 Bold Bars</td>
+      <td><ruby>2 Bold Bars<rt>(&lt;140BPM~)</rt><ruby> <ruby>4 Bold Bars<rt>(&gt;140BPM)</rt><ruby></td>
+      <td><ruby>2 Bold Bars<rt>(&lt;100BPM~)</rt><ruby><ruby> 4 Bold Bars</td>
+      <td><ruby>2 Bold Bars<rt>(&lt;400BPM~)</rt><ruby></td>
+    </tr>
+  </tbody>
+</table>
 
 <hr style="margin: 64px auto;">
 
-<h2>Random notes</h2>
-Consistency
-From Easy to Hard
-Mediums types as a duet can
-offer design variation mirroring with possibly an emphasis note as a divider
-be divided by lane (transition with usually a masher at the end)
-switch with each one a different structure
-Gemini are Laneless
+<h2>Overlaps</h2>
 
-Larges types as a duet can
-swap copypasted (no normal notes)
-A Consensus & A Different Point of View
-Lanes & Directions
-Monsters direction contain a difficulty value at reading!
-No Directions
-Ease
-Cross
-The Boss add usually the necessity to "frontal projectile" they appear on the screen late, it's like you don't see them at the border, that's why they are harder to stream than monsters, Monsters are also interesting if u don't want "frontal late appearing notes" but that shouldn't be the main arguement to this decision. They need a little more reflex reading than normal notes
-sometimes phase 1 is easier to read than boss phase 2
-- Opposite direction of a Monster Note based on his lane
-- Raider in the air
--  Hammer in the ground
-Are the 3 ways of highest energy moving, in charting we must keep the balance with the song interpretation.
-aa
-Ruling Arrangement
-aa
-Beginner Errors
-Not playing enough the game
-Unconventional/wrong grid placement (off sync)
-Using holds for a holding sound with no debate on the gameplay consequences
+<p>Here are some ways to overlap:</p>
 
+<div style="display: grid; grid-template-columns: 1fr 1fr;">
 
+<div>Commons
+<li>Ghost + Monsters(direction)/Projectiles/Raider/Hammer</li>
+<li>Tap Hold + Monsters/Larges/Projectiles/Raider/Hammer</li>
+</div>
+
+<div>Uncommons
+<li>Hold+Hold</li>
+<li>Hold + Normal Pattern</li>
+<li>Masher + Pattern</li>
+<li>Monsters(double direction)</li>
+<li>Larges + Monsters</li>
+</div>
+
+</div>
+
+<h4>Special Bug Fix</h4>
+[Hold] + [grnd Masher] overlap need [Masher] to be moved a little earlier by Ctrl+Key direction
+
+<hr style="margin: 64px auto;">
+
+<h3>Trivia</h3>
+
+The old method for tap hold and tap masher was grid 256 (max grid) from the beginning to February 2024
+
+<hr style="margin: 64px auto;">
 
 </body>
-<style>
-    body{
-        background-color: #1b1b1b;
-        color: #FFFFFF;
-    }
-</style>
+
+<!--Theme Toggle Script-->
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+  });
+
+  function toggleTheme() {
+    const root = document.documentElement;
+    const theme = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+    root.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
+  }
+</script>
+
 </html>
