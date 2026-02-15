@@ -830,7 +830,7 @@ Genre: Cartoon<br>
 Energy: Twilight Outside<br>
 Difficulty Peak: 12<br>
 Tags: <span style="font-size: x-small;">
-Collab, </span><br>
+Collab, Graveyard</span><br>
 </p>
 <img src="MDMC/Fandom/DJMAX/Scene_09.png" alt="DJMAX" width="640px" height="360px">
 </div>
@@ -888,7 +888,7 @@ Eastern</span><br>
 
 <p>Lowest to Highest by Impact Power</p>
 
-<div class="list" style="display: flex; flex-direction: row; flex-wrap: wrap; align-content: space-evenly; gap: 32px; justify-content: space-between: center; font-size: large;">
+<div class="list" style="display: flex; flex-direction: row; flex-wrap: wrap; align-content: space-evenly; gap: 32px; justify-content: space-between; font-size: large;">
 
 <div style="text-align: center;">
 Level X: Hold, Gear, Ghost<br>
@@ -1543,10 +1543,352 @@ This type of charting imply a significant number of double taps.</p>
 
 <h2>Boss</h2>
 
+Last time we've seen that projectiles have a standardized coupling.<br>
+In specific times switching classical to special choices can improve a chart.<br>
+Now we will dive into the second grouping which is more complex.<br>
+This one function is to give a different feeling based on the movement and spawn position.<br>
+It's especially useful to know at moments you hesitate which phase or boss hide free sections.<br>
+Projectiles can be classified by their animatations and the stance the boss takes at its phase.<br>
+Based on the scene there are multiples setups to projectiles properties.<br>
+<br>
+When the movement is strictly horizontal let's call it [Straight]<br>
+When it collide to the floor on the ground [Bounce]<br>
+When the bullets spawn by each lane for each hand [Corners]<br>
+When the bullets spawn from the same point whatever its lane [Origin]<br>
+One is either [Straight] or [Bounce] and [Corners] or [Origin]<br>
+
+<style>
+.proj {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.proj .imgs {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+
+.proj img {
+  height: 24px;
+  width: auto;
+  image-rendering: pixelated;
+}
+
+.proj .label {
+  font-size: 0.85rem;
+  white-space: nowrap;
+}
+</style>
+
+<table border="1" style="text-align: center; margin: 64px auto;">
+  <thead>
+    <tr>
+      <th>Scene</th>
+      <th>Proj 1</th>
+      <th>Proj 2</th>
+      <th>Proj 3</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    <!-- Space Station -->
+    <tr>
+      <td>Space Station</td>
+      <td>
+        <div class="proj">
+          <div class="imgs">
+            <img src="MDMC/Fandom/Space_Station/Boss_Projectile_1(Grnd).png">
+            <img src="MDMC/Fandom/Space_Station/Boss_Projectile_1(Air).png">
+          </div>
+          <div class="label">Straight Corners</div>
+        </div>
+      </td>
+      <td>
+        <div class="proj">
+          <div class="imgs">
+            <img src="MDMC/Fandom/Space_Station/Boss_Projectile_2(Grnd).png">
+            <img src="MDMC/Fandom/Space_Station/Boss_Projectile_2(Air).png">
+          </div>
+          <div class="label">Straight Origin</div>
+        </div>
+      </td>
+      <td>
+        <div class="proj">
+          <div class="imgs">
+            <img src="MDMC/Fandom/Space_Station/Boss_Projectile_3(Grnd).png">
+            <img src="MDMC/Fandom/Space_Station/Boss_Projectile_3(Air).png">
+          </div>
+          <div class="label">Bounce Origin</div>
+        </div>
+      </td>
+    </tr>
+
+    <!-- Retrocity -->
+    <tr>
+      <td>Retrocity</td>
+      <td>
+        <div class="proj">
+          <div class="imgs">
+            <img src="MDMC/Fandom/Retrocity/Boss_Projectile_1(Grnd).png">
+            <img src="MDMC/Fandom/Retrocity/Boss_Projectile_1(Air).png">
+          </div>
+          <div class="label">Straight Origin</div>
+        </div>
+      </td>
+      <td>
+        <div class="proj">
+          <div class="imgs">
+            <img src="MDMC/Fandom/Retrocity/Boss_Projectile_2(Grnd).png">
+            <img src="MDMC/Fandom/Retrocity/Boss_Projectile_2(Air).png">
+          </div>
+          <div class="label">Bounce Origin</div>
+        </div>
+      </td>
+      <td>
+        <div class="proj">
+          <div class="imgs">
+            <img src="MDMC/Fandom/Retrocity/Boss_Projectile_3(Grnd).png">
+            <img src="MDMC/Fandom/Retrocity/Boss_Projectile_3(Air).png">
+          </div>
+          <div class="label">Bounce Origin</div>
+        </div>
+      </td>
+    </tr>
+
+    <!-- Castle -->
+    <tr>
+      <td>Castle</td>
+      <td>
+        <div class="proj">
+          <div class="imgs">
+            <img src="MDMC/Fandom/Castle/Boss_Projectile_1(Grnd).png">
+            <img src="MDMC/Fandom/Castle/Boss_Projectile_1(Air).png">
+          </div>
+          <div class="label">Straight Origin</div>
+        </div>
+      </td>
+      <td>
+        <div class="proj">
+          <div class="imgs">
+            <img src="MDMC/Fandom/Castle/Boss_Projectile_2(Grnd).png">
+            <img src="MDMC/Fandom/Castle/Boss_Projectile_2(Air).png">
+          </div>
+          <div class="label">Bounce Origin</div>
+        </div>
+      </td>
+      <td>
+        <div class="proj">
+          <div class="imgs">
+            <img src="MDMC/Fandom/Castle/Boss_Projectile_3(Grnd).png">
+            <img src="MDMC/Fandom/Castle/Boss_Projectile_3(Air).png">
+          </div>
+          <div class="label">Straight Origin</div>
+        </div>
+      </td>
+    </tr>
+
+    <!-- Rainy Night -->
+    <tr>
+      <td>Rainy Night</td>
+      <td>
+        <div class="proj">
+          <div class="imgs">
+            <img src="MDMC/Fandom/Rainy_Night/Boss_Projectile_1(Grnd).png">
+            <img src="MDMC/Fandom/Rainy_Night/Boss_Projectile_1(Air).png">
+          </div>
+          <div class="label">Straight Origin</div>
+        </div>
+      </td>
+      <td>
+        <div class="proj">
+          <div class="imgs">
+            <img src="MDMC/Fandom/Rainy_Night/Boss_Projectile_2(Grnd).png">
+            <img src="MDMC/Fandom/Rainy_Night/Boss_Projectile_2(Air).png">
+          </div>
+          <div class="label">Bounce Origin</div>
+        </div>
+      </td>
+      <td>
+        <div class="proj">
+          <div class="imgs">
+            <img src="MDMC/Fandom/Rainy_Night/Boss_Projectile_3(Grnd).png">
+            <img src="MDMC/Fandom/Rainy_Night/Boss_Projectile_3(Air).png">
+          </div>
+          <div class="label">Bounce Origin</div>
+        </div>
+      </td>
+    </tr>
+
+    <!-- Candyland -->
+    <tr>
+      <td>Candyland</td>
+      <td>
+        <div class="proj">
+          <div class="imgs">
+            <img src="MDMC/Fandom/Candyland/Boss_Projectile_1(Grnd).png">
+            <img src="MDMC/Fandom/Candyland/Boss_Projectile_1(Air).png">
+          </div>
+          <div class="label">Straight Origin</div>
+        </div>
+      </td>
+      <td>
+        <div class="proj">
+          <div class="imgs">
+            <img src="MDMC/Fandom/Candyland/Boss_Projectile_2(Grnd).png">
+            <img src="MDMC/Fandom/Candyland/Boss_Projectile_2(Air).png">
+          </div>
+          <div class="label">Bounce Origin</div>
+        </div>
+      </td>
+      <td>
+        <div class="proj">
+          <div class="imgs">
+            <img src="MDMC/Fandom/Candyland/Boss_Projectile_3(Grnd).png">
+            <img src="MDMC/Fandom/Candyland/Boss_Projectile_3(Air).png">
+          </div>
+          <div class="label">Bounce Origin</div>
+        </div>
+      </td>
+    </tr>
+
+    <!-- Oriental -->
+    <tr>
+      <td>Oriental</td>
+      <td>
+        <div class="proj">
+          <div class="imgs">
+            <img src="MDMC/Fandom/Oriental/Boss_Projectile_1(Grnd).png">
+            <img src="MDMC/Fandom/Oriental/Boss_Projectile_1(Air).png">
+          </div>
+          <div class="label">Straight Corners</div>
+        </div>
+      </td>
+      <td>
+        <div class="proj">
+          <div class="imgs">
+            <img src="MDMC/Fandom/Oriental/Boss_Projectile_2(Grnd).png">
+            <img src="MDMC/Fandom/Oriental/Boss_Projectile_2(Air).png">
+          </div>
+          <div class="label">Bounce Origin</div>
+        </div>
+      </td>
+      <td>
+        <div class="proj">
+          <div class="imgs">
+            <img src="MDMC/Fandom/Oriental/Boss_Projectile_3(Grnd).png">
+            <img src="MDMC/Fandom/Oriental/Boss_Projectile_3(Air).png">
+          </div>
+          <div class="label">Bounce Origin</div>
+        </div>
+      </td>
+    </tr>
+
+    <!-- Let's Groove -->
+    <tr>
+      <td>Let's Groove</td>
+      <td>
+        <div class="proj">
+          <div class="imgs">
+            <img src="MDMC/Fandom/Let's_Groove/Boss_Projectile_1(Grnd).png">
+            <img src="MDMC/Fandom/Let's_Groove/Boss_Projectile_1(Air).png">
+          </div>
+          <div class="label">Straight Origin</div>
+        </div>
+      </td>
+      <td>
+        <div class="proj">
+          <div class="imgs">
+            <img src="MDMC/Fandom/Let's_Groove/Boss_Projectile_2(Grnd).png">
+            <img src="MDMC/Fandom/Let's_Groove/Boss_Projectile_2(Air).png">
+          </div>
+          <div class="label">Straight Origin</div>
+        </div>
+      </td>
+      <td>
+        <div class="proj">
+          <div class="imgs">
+            <img src="MDMC/Fandom/Let's_Groove/Boss_Projectile_3(Grnd).png">
+            <img src="MDMC/Fandom/Let's_Groove/Boss_Projectile_3(Air).png">
+          </div>
+          <div class="label">Bounce Origin</div>
+        </div>
+      </td>
+    </tr>
+
+    <!-- Touhou -->
+    <tr>
+      <td>Touhou</td>
+      <td>
+        <div class="proj">
+          <div class="imgs">
+            <img src="MDMC/Fandom/Touhou/Boss_Projectile_1(Grnd).png">
+            <img src="MDMC/Fandom/Touhou/Boss_Projectile_1(Air).png">
+          </div>
+          <div class="label">Straight Corners</div>
+        </div>
+      </td>
+      <td>
+        <div class="proj">
+          <div class="imgs">
+            <img src="MDMC/Fandom/Touhou/Boss_Projectile_2(Grnd).png">
+            <img src="MDMC/Fandom/Touhou/Boss_Projectile_2(Air).png">
+          </div>
+          <div class="label">Straight Origin</div>
+        </div>
+      </td>
+      <td>
+        <div class="proj">
+          <div class="imgs">
+            <img src="MDMC/Fandom/Touhou/Boss_Projectile_3(Grnd).png">
+            <img src="MDMC/Fandom/Touhou/Boss_Projectile_3(Air).png">
+          </div>
+          <div class="label">Straight Origin</div>
+        </div>
+      </td>
+    </tr>
+
+    <!-- DJMAX -->
+    <tr>
+      <td>DJMAX</td>
+      <td>
+        <div class="proj">
+          <div class="imgs">
+            <img src="MDMC/Fandom/DJMAX/Boss_Projectile_1(Grnd).png">
+            <img src="MDMC/Fandom/DJMAX/Boss_Projectile_1(Air).png">
+          </div>
+          <div class="label">Straight Corners</div>
+        </div>
+      </td>
+      <td>
+        <div class="proj">
+          <div class="imgs">
+            <img src="MDMC/Fandom/DJMAX/Boss_Projectile_2(Grnd).png">
+            <img src="MDMC/Fandom/DJMAX/Boss_Projectile_2(Air).png">
+          </div>
+          <div class="label">Straight Origin</div>
+        </div>
+      </td>
+      <td>
+        <div class="proj">
+          <div class="imgs">
+            <img src="MDMC/Fandom/DJMAX/Boss_Projectile_3(Grnd).png">
+            <img src="MDMC/Fandom/DJMAX/Boss_Projectile_3(Air).png">
+          </div>
+          <div class="label">Straight Origin</div>
+        </div>
+      </td>
+    </tr>
+
+  </tbody>
+</table>
+
 <p>
 Boss projectiles 1/2&3 are used separately unless its a special section.<br>
 Melee and Mashers have an implicit Forward animation.<br>
-It's same with projectiles cuz as they spawn and move until tap there is an interval.<br>
+It's same with projectiles because as they spawn and move until tap there is an interval.<br>
 They can conflict with each other and produce unreadable glitches.<br>
 </p>
 
