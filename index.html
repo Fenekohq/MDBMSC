@@ -134,6 +134,16 @@
       appearance: none;
       transition: all 0.3s ease;
     }
+
+    .software-container {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+    .software {
+      font-size: 2.5vw;
+    }
+
 </style>
 
 </head>
@@ -141,25 +151,38 @@
 <body>
 
 <h1 style="text-align: center; font-size: 2em;">MDBMSC Custom Guide</h1>
-</div>
+
   <button id="themeToggle" onclick="toggleTheme()" aria-label="Toggle theme" style="z-index: 2000;">◐</button>
+
+<h2 id="introduction">Introduction</h2>
 
 <p>Hello Everyone! This website is a tutorial on the Game Muse Dash and specifically the Level Making, a guide treating my experience with charting.<br>
 Check <a href="https://mdmc.moe/" target="_blank">MDMC website</a> and <a href="https://discord.gg/mdmc" target="_blank">MDMC Discord Server</a> to discover those made by the community.</p>
 
 <hr style="margin: 64px auto;">
 
-<h2 style="text-align: center;">Programs Requirements</h2>
-<style>
-  .software-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-  }
-  .software {
-    font-size: 2.5vw;
-  }
-</style>
+<h2 id="chapters">Chapters</h2>
+<div class="chapter-nav" role="navigation" aria-label="Chapter navigation">
+  <button type="button" class="chapter-jump" onclick="document.getElementById('introduction').scrollIntoView({behavior: 'smooth'});">Introduction</button>
+  <button type="button" class="chapter-jump" onclick="document.getElementById('programs-requirements').scrollIntoView({behavior: 'smooth'});">Programs Requirements</button>
+  <button type="button" class="chapter-jump" onclick="document.getElementById('chart-file').scrollIntoView({behavior: 'smooth'});">Chart File</button>
+  <button type="button" class="chapter-jump" onclick="document.getElementById('seven-zip').scrollIntoView({behavior: 'smooth'});">7-Zip</button>
+  <button type="button" class="chapter-jump" onclick="document.getElementById('about-audacity').scrollIntoView({behavior: 'smooth'});">About Audacity</button>
+  <button type="button" class="chapter-jump" onclick="document.getElementById('note-types-class').scrollIntoView({behavior: 'smooth'});">Note Types Class</button>
+  <button type="button" class="chapter-jump" onclick="document.getElementById('scenes-stages').scrollIntoView({behavior: 'smooth'});">Scenes/Stages</button>
+  <button type="button" class="chapter-jump" onclick="document.getElementById('scene-eggs').scrollIntoView({behavior: 'smooth'});">Scene Eggs</button>
+  <button type="button" class="chapter-jump" onclick="document.getElementById('structural-organization').scrollIntoView({behavior: 'smooth'});">Structural Organization</button>
+  <button type="button" class="chapter-jump" onclick="document.getElementById('polyrhythm').scrollIntoView({behavior: 'smooth'});">Polyrhythm</button>
+  <button type="button" class="chapter-jump" onclick="document.getElementById('small_mediums_animation').scrollIntoView({behavior: 'smooth'});">Small/Mediums Animation</button>
+  <button type="button" class="chapter-jump" onclick="document.getElementById('boss').scrollIntoView({behavior: 'smooth'});">Boss</button>
+  <button type="button" class="chapter-jump" onclick="document.getElementById('effects').scrollIntoView({behavior: 'smooth'});">Effects</button>
+  <button type="button" class="chapter-jump" onclick="document.getElementById('overlaps').scrollIntoView({behavior: 'smooth'});">Overlaps</button>
+  <button type="button" class="chapter-jump" onclick="document.getElementById('motifs').scrollIntoView({behavior: 'smooth'});">Motifs</button>
+</div>
+
+<hr style="margin: 64px auto;">
+
+<h2 id="programs-requirements" style="text-align: center;">Programs Requirements</h2>
 
 <div class="software-container">
 <div class="software"><img src="MDMC/Logos/Muse_Dash_Logo.png" alt="Muse_Dash_Logo" width="32px" height"32px"> Muse Dash</div>
@@ -171,11 +194,13 @@ Check <a href="https://mdmc.moe/" target="_blank">MDMC website</a> and <a href="
 
 <hr style="margin: 64px auto;">
 
-<h2>Offset with Audacity <img src="MDMC/Logos/Audacity_Logo.png" alt="Audacity_Logo" width="32px" height="32px"></h2>
+<h2 id="chart-file">Chart File</h2>
+
+<h4>Offset with Audacity <img src="MDMC/Logos/Audacity_Logo.png" alt="Audacity_Logo" width="32px" height="32px"></h4>
 
 <p>Download <a href="https://www.audacityteam.org/">Audacity</a>
 
-<h2>Chart File with 7-Zip <img src="MDMC/Logos/7-Zip_Logo.png" alt="Audacity_Logo" width="32px" height="32px"></h2>
+<h4>Chart File with 7-Zip <img src="MDMC/Logos/7-Zip_Logo.png" alt="Audacity_Logo" width="32px" height="32px"></h4>
 
 <p>Download <a href="https://www.7-zip.org/">7-Zip</a>
 You can also use WinRar but I don't recommend it cuz it has overcomplicated UI.<br>
@@ -195,9 +220,30 @@ You can also use WinRar but I don't recommend it cuz it has overcomplicated UI.<
 4. Replace ".zip" to ".mdm" and Click Ok<br>
 </p>
 
+<h2 id="seven-zip"> 7-Zip</h2>
+<p>7-Zip default format is 7z but you should use zip or it will make the game having trouble and crashes.<br>
+
+<img src="MDMC/7-Zip_zip_mdm.png" alt="7-Zip_zip_mdm">
+
+<h2 id="about-audacity">About Audacity</h2>
+<p>The quality setting in audacity is just the bit rate you export the audio at. You should export the audio at the same bit rate it was originally, which you should know.<br>
+Each quality setting in audacity corresponds to a specific kbps, they are as follows:</p>
+<li>0 = 64</li>
+<li>1 = 80</li>
+<li>2 = 96</li>
+<li>3 = 112</li>
+<li>4 = 128</li>
+<li>5 = 160</li>
+<li>6 = 192</li>
+<li>7 = 224</li>
+<li>8 = 256</li>
+<li>9 = 320</li>
+<li>10 = 500</li>
+<q>- HurricaneH</q>
+
 <hr style="margin: 64px auto;">
 
-<h2>Note Types Class</h2>
+<h2 id="note-types-class">Note Types Class</h2>
 
 <div class="list">
 Normal Notes: Small & Mediums 1/2 [Monster Notes]<br>
@@ -695,7 +741,9 @@ Pickables: Heart, <ruby>Beam Note<rt>(Blue Note)</rt></ruby><br>
 </table>
 </div>
 
-<h2>Scenes/Stages</h2>
+<hr style="margin: 64px auto;">
+
+<h2 id="scenes-stages">Scenes/Stages</h2>
 
 <div style="display: grid; grid-template-columns: 1fr 1fr;">
 
@@ -880,7 +928,31 @@ Eastern</span><br>
 <img src="MDMC/Fandom/Chinese/Scene_12.png" alt="Temple" width="640px" height="360px">
 </div>
 
+<p>We can scene switch to scene 12 with 1Y even if it's not named as a note type</p>
+
 </div>
+
+<hr style="margin: 64px auto;">
+
+<h2 id="scene-eggs">Scene Eggs</h2>
+
+<p>We have variants of some scenes which add things in the background and maybe even some notes or the boss outfits to a slightly different environnement.<br>
+To trigger your scene egg, you must have this in the json of the chart: "sceneEgg": "&lt;egg name&gt;" (without &lt; and &gt;)
+</p>
+
+Here is the list of scene eggs:
+<li>Space Station - "Wacca" - "Cytus" - "Touhou" - "Arknights"</li>
+<li>Retrocity - "Cytus" - "Touhou" - "Arknights"</li>
+<li>Castle - "Wacca" - "Touhou" - "Arknights" - "Queen"</li>
+<li>Rainy Night - "Cytus" - "Touhou" - "Arknights"</li>
+<li>Candyland - "Cytus", "Christmas" - "Touhou"</li>
+<li>Oriental - "Cytus" - "Touhou"</li>
+<li>Touhou - "Touhou" - "BadApple"</li>
+<li>Miku - "RinLen"</li>
+<li>Chinese - "Arknights"</li>
+
+
+
 
 <hr style="margin: 64px auto;">
 
@@ -986,7 +1058,7 @@ All of them are highlighted lines and will be called bold bars<br>
 
 <hr style="margin: 64px auto;">
 
-<h2>Structural Organization</h2>
+<h2 id="structural-organization">Structural Organization</h2>
 
 <div style="display: grid; grid-template-columns: 1fr 1fr;">
 
@@ -1527,9 +1599,10 @@ The max tap Counter might be oscillating in game cuz of FPS drops</p>
     </tr>
   </tbody>
 </table>
+
 <hr style="margin: 64px auto;">
 
-<h2>Polyrhythm</h2>
+<h2 id="polyrhythm">Polyrhythm</h2>
 
 <p>Polyrhythm consist of theming instruments beats with a specific lane and note type.<br>
 It's a sort of ruling structure following 2 to 4 tracks at the same time.<br>
@@ -1559,7 +1632,323 @@ This type of charting imply a significant number of double taps.</p>
 
 <hr style="margin: 64px auto;">
 
-<h2>Boss</h2>
+<h2 id="small_mediums_animation">Small/Mediums Animation</h2>
+
+<p>Some notes are more animated than others, you might choose your medium the standard way by cutting in 2.<br>
+But in rarer case you might also want to give a more complex note progression based on appearance and animation.<br>
+There are 2 modes of animation which are "Peaceful" and "Excited".<br>
+Peaceful is not moving much and excited is moving a lot more.<br>
+By the way this information might not be that necessary but it's a plus at knowing the game.</p>
+
+<table border="1" style="text-align: center; margin: 64px auto;">
+  <thead>
+    <tr>
+      <th>Scene</th>
+      <th>Small</th>
+      <th>Medium 1</th>
+      <th>Medium 2</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    <!-- Space Station -->
+    <tr>
+      <td>Space Station</td>
+      <td>
+        <div class="proj">
+          <div class="imgs">
+            <img src="MDMC/Fandom/Space_Station/Small(Grnd).png">
+            <img src="MDMC/Fandom/Space_Station/Small(Air).png">
+          </div>
+          <div class="label">Peaceful</div>
+        </div>
+      </td>
+      <td>
+        <div class="proj">
+          <div class="imgs">
+            <img src="MDMC/Fandom/Space_Station/Medium_1(Grnd).png">
+            <img src="MDMC/Fandom/Space_Station/Medium_1(Air).png">
+          </div>
+          <div class="label">Peaceful</div>
+        </div>
+      </td>
+      <td>
+        <div class="proj">
+          <div class="imgs">
+            <img src="MDMC/Fandom/Space_Station/Medium_2(Grnd).png">
+            <img src="MDMC/Fandom/Space_Station/Medium_2(Air).png">
+          </div>
+          <div class="label">Excited</div>
+        </div>
+      </td>
+    </tr>
+
+    <!-- Retrocity -->
+    <tr>
+      <td>Retrocity</td>
+      <td>
+        <div class="proj">
+          <div class="imgs">
+            <img src="MDMC/Fandom/Retrocity/Small(Grnd).png">
+            <img src="MDMC/Fandom/Retrocity/Small(Air).png">
+          </div>
+          <div class="label">Peaceful</div>
+        </div>
+      </td>
+      <td>
+        <div class="proj">
+          <div class="imgs">
+            <img src="MDMC/Fandom/Retrocity/Medium_1(Grnd).png">
+            <img src="MDMC/Fandom/Retrocity/Medium_1(Air).png">
+          </div>
+          <div class="label">Excited</div>
+        </div>
+      </td>
+      <td>
+        <div class="proj">
+          <div class="imgs">
+            <img src="MDMC/Fandom/Retrocity/Medium_2(Grnd).png">
+            <img src="MDMC/Fandom/Retrocity/Medium_2(Air).png">
+          </div>
+          <div class="label">Excited</div>
+        </div>
+      </td>
+    </tr>
+
+    <!-- Castle -->
+    <tr>
+      <td>Castle</td>
+      <td>
+        <div class="proj">
+          <div class="imgs">
+            <img src="MDMC/Fandom/Castle/Small(Grnd).png">
+            <img src="MDMC/Fandom/Castle/Small(Air).png">
+          </div>
+          <div class="label">Excited</div>
+        </div>
+      </td>
+      <td>
+        <div class="proj">
+          <div class="imgs">
+            <img src="MDMC/Fandom/Castle/Medium_1(Grnd).png">
+            <img src="MDMC/Fandom/Castle/Medium_1(Air).png">
+          </div>
+          <div class="label">Peaceful</div>
+        </div>
+      </td>
+      <td>
+        <div class="proj">
+          <div class="imgs">
+            <img src="MDMC/Fandom/Castle/Medium_2(Grnd).png">
+            <img src="MDMC/Fandom/Castle/Medium_2(Air).png">
+          </div>
+          <div class="label">Excited</div>
+        </div>
+      </td>
+    </tr>
+
+    <!-- Rainy Night -->
+    <tr>
+      <td>Rainy Night</td>
+      <td>
+        <div class="proj">
+          <div class="imgs">
+            <img src="MDMC/Fandom/Rainy_Night/Small(Grnd).png">
+            <img src="MDMC/Fandom/Rainy_Night/Small(Air).png">
+          </div>
+          <div class="label">Excited</div>
+        </div>
+      </td>
+      <td>
+        <div class="proj">
+          <div class="imgs">
+            <img src="MDMC/Fandom/Rainy_Night/Medium_1(Grnd).png">
+            <img src="MDMC/Fandom/Rainy_Night/Medium_1(Air).png">
+          </div>
+          <div class="label">Peaceful</div>
+        </div>
+      </td>
+      <td>
+        <div class="proj">
+          <div class="imgs">
+            <img src="MDMC/Fandom/Rainy_Night/Medium_2(Grnd).png">
+            <img src="MDMC/Fandom/Rainy_Night/Medium_2(Air).png">
+          </div>
+          <div class="label">Excited</div>
+        </div>
+      </td>
+    </tr>
+
+    <!-- Candyland -->
+    <tr>
+      <td>Candyland</td>
+      <td>
+        <div class="proj">
+          <div class="imgs">
+            <img src="MDMC/Fandom/Candyland/Small(Grnd).png">
+            <img src="MDMC/Fandom/Candyland/Small(Air).png">
+          </div>
+          <div class="label">Peaceful</div>
+        </div>
+      </td>
+      <td>
+        <div class="proj">
+          <div class="imgs">
+            <img src="MDMC/Fandom/Candyland/Medium_1(Grnd).png">
+            <img src="MDMC/Fandom/Candyland/Medium_1(Air).png">
+          </div>
+          <div class="label">Peaceful</div>
+        </div>
+      </td>
+      <td>
+        <div class="proj">
+          <div class="imgs">
+            <img src="MDMC/Fandom/Candyland/Medium_2(Grnd).png">
+            <img src="MDMC/Fandom/Candyland/Medium_2(Air).png">
+          </div>
+          <div class="label">Excited</div>
+        </div>
+      </td>
+    </tr>
+
+    <!-- Oriental -->
+    <tr>
+      <td>Oriental</td>
+      <td>
+        <div class="proj">
+          <div class="imgs">
+            <img src="MDMC/Fandom/Oriental/Small(Grnd).png">
+            <img src="MDMC/Fandom/Oriental/Small(Air).png">
+          </div>
+          <div class="label">Peaceful</div>
+        </div>
+      </td>
+      <td>
+        <div class="proj">
+          <div class="imgs">
+            <img src="MDMC/Fandom/Oriental/Medium_1(Grnd).png">
+            <img src="MDMC/Fandom/Oriental/Medium_1(Air).png">
+          </div>
+          <div class="label">Peaceful</div>
+        </div>
+      </td>
+      <td>
+        <div class="proj">
+          <div class="imgs">
+            <img src="MDMC/Fandom/Oriental/Medium_2(Grnd).png">
+            <img src="MDMC/Fandom/Oriental/Medium_2(Air).png">
+          </div>
+          <div class="label">Excited</div>
+        </div>
+      </td>
+    </tr>
+
+    <!-- Let's Groove -->
+    <tr>
+      <td>Let's Groove</td>
+      <td>
+        <div class="proj">
+          <div class="imgs">
+            <img src="MDMC/Fandom/Let_s_Groove/Small(Grnd).png">
+            <img src="MDMC/Fandom/Let_s_Groove/Small(Air).png">
+          </div>
+          <div class="label">Peaceful</div>
+        </div>
+      </td>
+      <td>
+        <div class="proj">
+          <div class="imgs">
+            <img src="MDMC/Fandom/Let_s_Groove/Medium_1(Grnd).png">
+            <img src="MDMC/Fandom/Let_s_Groove/Medium_1(Air).png">
+          </div>
+          <div class="label">Peaceful</div>
+        </div>
+      </td>
+      <td>
+        <div class="proj">
+          <div class="imgs">
+            <img src="MDMC/Fandom/Let_s_Groove/Medium_2(Grnd).png">
+            <img src="MDMC/Fandom/Let_s_Groove/Medium_2(Air).png">
+          </div>
+          <div class="label">Peaceful</div>
+        </div>
+      </td>
+    </tr>
+
+    <!-- Touhou -->
+    <tr>
+      <td>Touhou</td>
+      <td>
+        <div class="proj">
+          <div class="imgs">
+            <img src="MDMC/Fandom/Touhou/Small(Grnd).png">
+            <img src="MDMC/Fandom/Touhou/Small(Air).png">
+          </div>
+          <div class="label">Peaceful</div>
+        </div>
+      </td>
+      <td>
+        <div class="proj">
+          <div class="imgs">
+            <img src="MDMC/Fandom/Touhou/Medium_1(Grnd).png">
+            <img src="MDMC/Fandom/Touhou/Medium_1(Air).png">
+          </div>
+          <div class="label">Peaceful</div>
+        </div>
+      </td>
+      <td>
+        <div class="proj">
+          <div class="imgs">
+            <img src="MDMC/Fandom/Touhou/Medium_2(Grnd).png">
+            <img src="MDMC/Fandom/Touhou/Medium_2(Air).png">
+          </div>
+          <div class="label">Peaceful</div>
+        </div>
+      </td>
+    </tr>
+
+    <!-- DJMAX -->
+    <tr>
+      <td>DJMAX</td>
+      <td>
+        <div class="proj">
+          <div class="imgs">
+            <img src="MDMC/Fandom/DJMAX/Small(Grnd).png">
+            <img src="MDMC/Fandom/DJMAX/Small(Air).png">
+          </div>
+          <div class="label">Peaceful</div>
+        </div>
+      </td>
+      <td>
+        <div class="proj">
+          <div class="imgs">
+            <img src="MDMC/Fandom/DJMAX/Medium_1(Grnd).png">
+            <img src="MDMC/Fandom/DJMAX/Medium_1(Air).png">
+          </div>
+          <div class="label">Peaceful</div>
+        </div>
+      </td>
+      <td>
+        <div class="proj">
+          <div class="imgs">
+            <img src="MDMC/Fandom/DJMAX/Medium_2(Grnd).png">
+            <img src="MDMC/Fandom/DJMAX/Medium_2(Air).png">
+          </div>
+          <div class="label">Excited</div>
+        </div>
+      </td>
+    </tr>
+
+  </tbody>
+</table>
+
+
+
+
+
+<hr style="margin: 64px auto;">
+
+<h2 id="boss">Boss</h2>
 
 Last time we've seen that projectiles have a standardized coupling.<br>
 In specific times switching classical to special choices can improve a chart.<br>
@@ -1944,7 +2333,163 @@ They can conflict with each other and produce unreadable glitches.<br>
 
 <hr style="margin: 64px auto;">
 
-<h2>Overlaps</h2>
+<h2 id="effects">Effects</h2>
+
+<p>To show the list of effect and use them you must uncheck "Only MD Note in #WAV" on "Advanced"</p>
+
+
+<div style="display: flex; justify-content: center; align-items: center; gap: 12px; margin: 0 0 16px;">
+  <button type="button" id="play-all-gifs" class="gif-play-all">▶ Play all</button>
+  <button type="button" id="play-none-gifs" class="gif-play-all">■ Play none</button>
+</div>
+
+<div style="display: grid; grid-template-columns: 1fr 1fr 1fr;">
+
+<div>
+<div style="display: flex; align-items: center; gap: 8px;">
+<dt><b><u>Hide/Unhide Notes (1J, 1K)</u></b></dt>
+<button type="button" class="gif-play-button" data-gif="MDMC/Effects/Hide_Unhide_Notes.gif" aria-label="Play Hide/Unhide Notes">▶ Play</button>
+</div>
+<dd>Add/Release tension or gimmick</dd>
+<img class="gif-preview" data-gif="MDMC/Effects/Hide_Unhide_Notes.gif" src="" alt="Hide_Unhide_Notes" style="width: 256px; height: 144px; cursor: pointer;">
+</div>
+
+<div>
+<div style="display: flex; align-items: center; gap: 8px;">
+<dt><b><u>Hide/Unhide Boss (1L, 1M)</u></b></dt>
+<button type="button" class="gif-play-button" data-gif="MDMC/Effects/Hide_Unhide_Boss.gif" aria-label="Play Hide/Unhide Boss">▶ Play</button>
+</div>
+<dd>Another way to exit boss, mixable with duo with notes</dd>
+<img class="gif-preview" data-gif="MDMC/Effects/Hide_Unhide_Boss.gif" src="" alt="Hide_Unhide_Boss" style="width: 256px; height: 144px; cursor: pointer;">
+</div>
+
+<div>
+<div style="display: flex; align-items: center; gap: 8px;">
+<dt><b><u>Hide/Unhide Background (25, 26)</u></b></dt>
+<button type="button" class="gif-play-button" data-gif="MDMC/Effects/Hide_Unhide_Background.gif" aria-label="Play Hide/Unhide Background">▶ Play</button>
+</div>
+<dd>Useful for changing scenes, combo with Vignette</dd>
+<img class="gif-preview" data-gif="MDMC/Effects/Hide_Unhide_Background.gif" src="" alt="Hide_Unhide_Background" style="width: 256px; height: 144px; cursor: pointer;">
+</div>
+
+<div>
+<div style="display: flex; align-items: center; gap: 8px;">
+<dt><b><u>Screen Scroll UP/DOWN (27, 28, 29)</u></b></dt>
+<button type="button" class="gif-play-button" data-gif="MDMC/Effects/Screen_Scroll_UP_DOWN.gif" aria-label="Play Screen Scroll UP/DOWN">▶ Play</button>
+</div>
+<dd>Very short usage to Shake effect, gameplay is less readable</dd>
+<img class="gif-preview" data-gif="MDMC/Effects/Screen_Scroll_UP_DOWN.gif" src="" alt="Screen_Scroll_UP_DOWN" style="width: 256px; height: 144px; cursor: pointer;">
+</div>
+
+<div>
+<div style="display: flex; align-items: center; gap: 8px;">
+<dt><b><u>Scanline Ripples (2A, 2B)</u></b></dt>
+<button type="button" class="gif-play-button" data-gif="MDMC/Effects/Scanline_Ripples.gif" aria-label="Play Scanline Ripples">▶ Play</button>
+</div>
+<dd>Lag effect</dd>
+<img class="gif-preview" data-gif="MDMC/Effects/Scanline_Ripples.gif" src="" alt="Scanline_Ripples" style="width: 256px; height: 144px; cursor: pointer;">
+</div>
+
+<div>
+<div style="display: flex; align-items: center; gap: 8px;">
+<dt><b><u>Chromatic Abberation (2C, 2D)</u></b></dt>
+<button type="button" class="gif-play-button" data-gif="MDMC/Effects/Chromatic_Abberation.gif" aria-label="Play Chromatic Abberation">▶ Play</button>
+</div>
+<dd>Blurry colors sligthly red/green/blue</dd>
+<img class="gif-preview" data-gif="MDMC/Effects/Chromatic_Abberation.gif" src="" alt="Chromatic_Abberation" style="width: 256px; height: 144px; cursor: pointer;">
+</div>
+
+<div>
+<div style="display: flex; align-items: center; gap: 8px;">
+<dt><b><u>Vignette (2E, 2F)</u></b></dt>
+<button type="button" class="gif-play-button" data-gif="MDMC/Effects/Vignette.gif" aria-label="Play Vignette">▶ Play</button>
+</div>
+<dd>Low tension, good combo with Hide Background</dd>
+<img class="gif-preview" data-gif="MDMC/Effects/Vignette.gif" src="" alt="Vignette" style="width: 256px; height: 144px; cursor: pointer;">
+</div>
+
+<div>
+<div style="display: flex; align-items: center; gap: 8px;">
+<dt><b><u>TV Static (2G, 2H)</u></b></dt>
+<button type="button" class="gif-play-button" data-gif="MDMC/Effects/TV_Static.gif" aria-label="Play TV Static">▶ Play</button>
+</div>
+<dd>Screen Crash, gameplay is not readable</dd>
+<img class="gif-preview" data-gif="MDMC/Effects/TV_Static.gif" src="" alt="TV_Static" style="width: 256px; height: 144px; cursor: pointer;">
+</div>
+
+<div>
+<div style="display: flex; align-items: center; gap: 8px;">
+<dt><b><u>Flashbang START/MID/END (2I, 2J, 2K)</u></b></dt>
+<button type="button" class="gif-play-button" data-gif="MDMC/Effects/Flashbang_START_MID_END.gif" aria-label="Play Flashbang START/MID/END">▶ Play</button>
+</div>
+<dd>Fade in start - Full opacity - Fade out end, default color is white</dd>
+<img class="gif-preview" data-gif="MDMC/Effects/Flashbang_START_MID_END.gif" src="" alt="Flashbang_START_MID_END" style="width: 256px; height: 144px; cursor: pointer;">
+</div>
+
+<div>
+<div style="display: flex; align-items: center; gap: 8px;">
+<dt><b><u>Flashbang Color High (<span style="font-size: small;">CM, CN, CO, CP, CQ, CR, CS, CT</span>)</u></b></dt>
+<button type="button" class="gif-play-button" data-gif="MDMC/Effects/Flashbang_START_MID_END.gif" aria-label="Play Flashbang Color High">▶ Play</button>
+</div>
+<dd>Can use 2 Flashbang MID in order to keep full opacity for certain time, type C to go fast and see the colors available: White, Black, Red, Green, Blue, Cyan, Magenta,, Yellow</dd>
+<img class="gif-preview" data-gif="MDMC/Effects/Flashbang_START_MID_END.gif" src="" alt="Flashbang_START_MID_END" style="width: 256px; height: 144px; cursor: pointer;">
+</div>
+
+<div>
+<div style="display: flex; align-items: center; gap: 8px;">
+<dt><b><u>BG Stop (2N, 2O)</u></b></dt>
+<button type="button" class="gif-play-button" data-gif="MDMC/Effects/BG_Stop.gif" aria-label="Play BG Stop">▶ Play</button>
+</div>
+<dd>Stop Background animation to no longer move</dd>
+<img class="gif-preview" data-gif="MDMC/Effects/BG_Stop.gif" src="" alt="BG_Stop" style="width: 256px; height: 144px; cursor: pointer;">
+</div>
+
+<div>
+<div style="display: flex; align-items: center; gap: 8px;">
+<dt><b><u>Mosaic (2P, 2Q)</u></b></dt>
+<button type="button" class="gif-play-button" data-gif="MDMC/Effects/Mosaic.gif" aria-label="Play Mosaic">▶ Play</button>
+</div>
+<dd>More Pixelated</dd>
+<img class="gif-preview" data-gif="MDMC/Effects/Mosaic.gif" src="" alt="Mosaic" style="width: 256px; height: 144px; cursor: pointer;">
+</div>
+
+<div>
+<div style="display: flex; align-items: center; gap: 8px;">
+<dt><b><u>Sepia (2R, 2S)</u></b></dt>
+<button type="button" class="gif-play-button" data-gif="MDMC/Effects/Sepia.gif" aria-label="Play Sepia">▶ Play</button>
+</div>
+<dd>Colorless</dd>
+<img class="gif-preview" data-gif="MDMC/Effects/Sepia.gif" src="" alt="Sepia" style="width: 256px; height: 144px; cursor: pointer;">
+</div>
+
+<div>
+<div style="display: flex; align-items: center; gap: 8px;">
+<dt><b><u>Focus Lines BLACK/WHITE (2T, 2U, 2V)</u></b></dt>
+<button type="button" class="gif-play-button" data-gif="MDMC/Effects/Focus_Lines_BLACK_WHITE.gif" aria-label="Play Focus Lines BLACK/WHITE">▶ Play</button>
+</div>
+<dd>High tension</dd>
+<img class="gif-preview" data-gif="MDMC/Effects/Focus_Lines_BLACK_WHITE.gif" src="" alt="Focus_Lines_BLACK_WHITE" style="width: 256px; height: 144px; cursor: pointer;">
+</div>
+
+<div>
+<div style="display: flex; align-items: center; gap: 8px;">
+<dt><b><u>Film Grain (2W, 2X)</u></b></dt>
+<button type="button" class="gif-play-button" data-gif="MDMC/Effects/Film_Grain.gif" aria-label="Play Film Grain">▶ Play</button>
+</div>
+<dd>Sepia but with old camera recording</dd>
+<img class="gif-preview" data-gif="MDMC/Effects/Film_Grain.gif" src="" alt="Film_Grain" style="width: 256px; height: 144px; cursor: pointer;">
+</div>
+
+<div>
+<dt><b><u>Autoplay (2Y, 2Z)</u></b></dt>
+<dd>Sleepwalker/Auto AP Mode for a certain time, you do nothing and it plays perfectly (or supposedly perfectly).</dd>
+</div>
+
+</div>
+
+<hr style="margin: 64px auto;">
+
+<h2 id="overlaps">Overlaps</h2>
 
 <p>Here are some ways to overlap:</p>
 
@@ -1972,7 +2517,7 @@ They can conflict with each other and produce unreadable glitches.<br>
 
 <hr style="margin: 64px auto;">
 
-<h2>Motifs</h2>
+<h2 id="motifs">Motifs</h2>
 
 <p>a Motif is a stream mixing of normal notes types between smalls, mediums and/or projectiles.<br>
 You need to know the length of your stream to have a little idea on what mix is possible.
@@ -1994,11 +2539,298 @@ ubmplay got replaced by Clone Dash all credits to @march on February 2026<br>
 
 </body>
 
-<!--Theme Toggle Script-->
+<style>
+  .chapter-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 12px;
+  }
+
+  .chapter-jump {
+    padding: 8px 12px;
+    border: 1px solid var(--table-border, #000);
+    border-radius: 999px;
+    background: transparent;
+    color: var(--text-color, #000);
+    cursor: pointer;
+    font-weight: 700;
+    transition: transform 0.15s ease, background-color 0.15s ease;
+  }
+
+  .chapter-jump:hover,
+  .chapter-jump:focus-visible {
+    background: rgba(255, 255, 255, 0.08);
+    transform: translateY(-1px);
+  }
+
+  .gif-play-all {
+    padding: 8px 14px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.08);
+    color: inherit;
+    cursor: pointer;
+    font-weight: 700;
+  }
+
+  .gif-preview {
+    display: block;
+    transition: transform 0.15s ease;
+  }
+
+  .gif-preview:hover,
+  .gif-preview:focus-visible {
+    transform: scale(1.02);
+  }
+
+  .gif-play-button {
+    margin: 0 0 8px 10px;
+    padding: 7px 14px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.08);
+    color: inherit;
+    cursor: pointer;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    vertical-align: top;
+  }
+
+  .gif-play-button:hover,
+  .gif-play-button:focus-visible,
+  .gif-play-all:hover,
+  .gif-play-all:focus-visible {
+    background: rgba(255, 255, 255, 0.16);
+  }
+
+  .gif-modal {
+    position: fixed;
+    inset: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    padding: 24px;
+    background: rgba(0, 0, 0, 0.78);
+  }
+
+  .gif-modal.is-open {
+    display: flex;
+  }
+
+  .gif-modal-content {
+    position: relative;
+    max-width: min(92vw, 1400px);
+    max-height: 92vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 12px;
+    padding: 18px;
+    box-shadow: 0 18px 50px rgba(0, 0, 0, 0.45);
+  }
+
+  .gif-modal-image {
+    display: block;
+    max-width: 100%;
+    max-height: 92vh;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: 8px;
+    background: #000;
+  }
+
+  .gif-modal-close {
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    width: 36px;
+    height: 36px;
+    border: none;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.14);
+    color: #fff;
+    font-size: 1.6rem;
+    line-height: 1;
+    cursor: pointer;
+  }
+</style>
+
+<div id="gifModal" class="gif-modal" aria-hidden="true">
+  <div class="gif-modal-content">
+    <button type="button" class="gif-modal-close" aria-label="Close image">×</button>
+    <img id="gifModalImage" class="gif-modal-image" src="" alt="Expanded GIF preview">
+  </div>
+</div>
+
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     const savedTheme = localStorage.getItem('theme') || 'light';
     document.documentElement.setAttribute('data-theme', savedTheme);
+
+    const modal = document.getElementById('gifModal');
+    const modalImage = document.getElementById('gifModalImage');
+    const closeBtn = document.querySelector('.gif-modal-close');
+    const previewImages = document.querySelectorAll('.gif-preview');
+
+    function generateStaticFrame(gifSrc) {
+      return new Promise(function (resolve, reject) {
+        const sourceImage = new Image();
+        sourceImage.decoding = 'sync';
+        sourceImage.onload = function () {
+          try {
+            if (sourceImage.decode) {
+              sourceImage.decode().then(function () {
+                const canvas = document.createElement('canvas');
+                const width = sourceImage.naturalWidth || sourceImage.width || 256;
+                const height = sourceImage.naturalHeight || sourceImage.height || 144;
+                canvas.width = width;
+                canvas.height = height;
+                const ctx = canvas.getContext('2d');
+                ctx.clearRect(0, 0, width, height);
+                ctx.drawImage(sourceImage, 0, 0, width, height);
+                resolve(canvas.toDataURL('image/png'));
+              }).catch(function () {
+                const canvas = document.createElement('canvas');
+                const width = sourceImage.naturalWidth || sourceImage.width || 256;
+                const height = sourceImage.naturalHeight || sourceImage.height || 144;
+                canvas.width = width;
+                canvas.height = height;
+                const ctx = canvas.getContext('2d');
+                ctx.clearRect(0, 0, width, height);
+                ctx.drawImage(sourceImage, 0, 0, width, height);
+                resolve(canvas.toDataURL('image/png'));
+              });
+              return;
+            }
+
+            const canvas = document.createElement('canvas');
+            const width = sourceImage.naturalWidth || sourceImage.width || 256;
+            const height = sourceImage.naturalHeight || sourceImage.height || 144;
+            canvas.width = width;
+            canvas.height = height;
+            const ctx = canvas.getContext('2d');
+            ctx.clearRect(0, 0, width, height);
+            ctx.drawImage(sourceImage, 0, 0, width, height);
+            resolve(canvas.toDataURL('image/png'));
+          } catch (error) {
+            reject(error);
+          }
+        };
+        sourceImage.onerror = reject;
+        sourceImage.src = gifSrc;
+      });
+    }
+
+    function restoreStaticPreview(img) {
+      const gifSrc = img.getAttribute('data-gif');
+      if (!gifSrc) return;
+
+      const staticFrame = img.getAttribute('data-static');
+      if (staticFrame) {
+        img.src = staticFrame;
+        img.setAttribute('data-state', 'static');
+        return;
+      }
+
+      img.src = '';
+      img.setAttribute('data-state', 'placeholder');
+    }
+
+    async function preparePreview(img) {
+      const gifSrc = img.getAttribute('data-gif');
+      if (!gifSrc) return;
+
+      try {
+        const staticFrame = await generateStaticFrame(gifSrc);
+        img.setAttribute('data-static', staticFrame);
+        restoreStaticPreview(img);
+      } catch (error) {
+        img.src = gifSrc;
+        img.style.filter = 'none';
+        img.setAttribute('data-state', 'fallback');
+      }
+    }
+
+    function enableAnimatedPreview(img) {
+      const gifSrc = img.getAttribute('data-gif');
+      if (!gifSrc) return;
+      img.src = gifSrc;
+      img.setAttribute('data-state', 'animated');
+    }
+
+    function openModalFromImage(img) {
+      const gifSrc = img.getAttribute('data-gif');
+      if (!gifSrc) return;
+      modalImage.src = gifSrc;
+      modalImage.alt = img.getAttribute('alt') || 'Expanded GIF preview';
+      modal.classList.add('is-open');
+      modal.setAttribute('aria-hidden', 'false');
+    }
+
+    previewImages.forEach(function (img) {
+      preparePreview(img);
+
+      img.addEventListener('click', function () {
+        openModalFromImage(img);
+      });
+    });
+
+    document.querySelectorAll('.gif-play-button').forEach(function (button) {
+      button.addEventListener('click', function () {
+        const gifSrc = button.getAttribute('data-gif');
+        if (!gifSrc) return;
+
+        previewImages.forEach(function (img) {
+          if (img.getAttribute('data-gif') === gifSrc) {
+            enableAnimatedPreview(img);
+          }
+        });
+      });
+    });
+
+    const playAllButton = document.getElementById('play-all-gifs');
+    if (playAllButton) {
+      playAllButton.addEventListener('click', function () {
+        previewImages.forEach(function (img) {
+          enableAnimatedPreview(img);
+        });
+      });
+    }
+
+    const playNoneButton = document.getElementById('play-none-gifs');
+    if (playNoneButton) {
+      playNoneButton.addEventListener('click', function () {
+        previewImages.forEach(function (img) {
+          restoreStaticPreview(img);
+        });
+      });
+    }
+
+    function closeModal() {
+      modal.classList.remove('is-open');
+      modal.setAttribute('aria-hidden', 'true');
+      modalImage.src = '';
+    }
+
+    if (closeBtn) {
+      closeBtn.addEventListener('click', closeModal);
+    }
+
+    modal.addEventListener('click', function (event) {
+      if (event.target === modal) closeModal();
+    });
+
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape' && modal.classList.contains('is-open')) {
+        closeModal();
+      }
+    });
   });
 
   function toggleTheme() {
