@@ -144,6 +144,177 @@
       font-size: 2.5vw;
     }
 
+  .image-container {
+    --scale-factor: 0.3;
+  }
+
+  .image-container img {
+    width: calc(var(--original-width) * var(--scale-factor) * 1px);
+    height: auto;
+  }
+    
+  .image-container-b img {
+    width: calc(var(--original-width) * var(--scale-factor) * 2px);
+    height: auto;
+  }
+  
+  .image-container table td {
+    text-align: center;
+    width: max-content;
+    padding: 4px;
+  }
+  
+  .note-table-container {
+    display: none !important;
+  }
+  
+  .note-table-container.active {
+    display: block !important;
+  }
+
+  .proj {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .proj .imgs {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+  }
+
+  .proj img {
+    height: 24px;
+    width: auto;
+    image-rendering: pixelated;
+  }
+
+  .proj .label {
+    font-size: 0.85rem;
+    white-space: nowrap;
+  }
+
+  .chapter-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 12px;
+  }
+
+  .chapter-jump {
+    padding: 8px 12px;
+    border: 1px solid var(--table-border, #000);
+    border-radius: 999px;
+    background: transparent;
+    color: var(--text-color, #000);
+    cursor: pointer;
+    font-weight: 700;
+    transition: transform 0.15s ease, background-color 0.15s ease;
+  }
+
+  .chapter-jump:hover,
+  .chapter-jump:focus-visible {
+    background: rgba(255, 255, 255, 0.08);
+    transform: translateY(-1px);
+  }
+
+  .gif-play-all {
+    padding: 8px 14px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.08);
+    color: inherit;
+    cursor: pointer;
+    font-weight: 700;
+  }
+
+  .gif-preview {
+    display: block;
+    transition: transform 0.15s ease;
+  }
+
+  .gif-preview:hover,
+  .gif-preview:focus-visible {
+    transform: scale(1.02);
+  }
+
+  .gif-play-button {
+    margin: 0 0 8px 10px;
+    padding: 7px 14px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.08);
+    color: inherit;
+    cursor: pointer;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    vertical-align: top;
+  }
+
+  .gif-play-button:hover,
+  .gif-play-button:focus-visible,
+  .gif-play-all:hover,
+  .gif-play-all:focus-visible {
+    background: rgba(255, 255, 255, 0.16);
+  }
+
+  .gif-modal {
+    position: fixed;
+    inset: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    padding: 24px;
+    background: rgba(0, 0, 0, 0.78);
+  }
+
+  .gif-modal.is-open {
+    display: flex;
+  }
+
+  .gif-modal-content {
+    position: relative;
+    max-width: min(92vw, 1400px);
+    max-height: 92vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 12px;
+    padding: 18px;
+    box-shadow: 0 18px 50px rgba(0, 0, 0, 0.45);
+  }
+
+  .gif-modal-image {
+    display: block;
+    max-width: 100%;
+    max-height: 92vh;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: 8px;
+    background: #000;
+  }
+
+  .gif-modal-close {
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    width: 36px;
+    height: 36px;
+    border: none;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.14);
+    color: #fff;
+    font-size: 1.6rem;
+    line-height: 1;
+    cursor: pointer;
+  }
 </style>
 
 </head>
@@ -171,13 +342,23 @@ Check <a href="https://mdmc.moe/" target="_blank">MDMC website</a> and <a href="
   <button type="button" class="chapter-jump" onclick="document.getElementById('note-types-class').scrollIntoView({behavior: 'smooth'});">Note Types Class</button>
   <button type="button" class="chapter-jump" onclick="document.getElementById('scenes-stages').scrollIntoView({behavior: 'smooth'});">Scenes/Stages</button>
   <button type="button" class="chapter-jump" onclick="document.getElementById('scene-eggs').scrollIntoView({behavior: 'smooth'});">Scene Eggs</button>
+  <button type="button" class="chapter-jump" onclick="document.getElementById('notes-ranking').scrollIntoView({behavior: 'smooth'});">Notes Ranking</button>
+  <button type="button" class="chapter-jump" onclick="document.getElementById('consider-those-statements').scrollIntoView({behavior: 'smooth'});">Consider those Statements</button>
+  <button type="button" class="chapter-jump" onclick="document.getElementById('measure-scale').scrollIntoView({behavior: 'smooth'});">Measure Scale</button>
   <button type="button" class="chapter-jump" onclick="document.getElementById('structural-organization').scrollIntoView({behavior: 'smooth'});">Structural Organization</button>
+  <button type="button" class="chapter-jump" onclick="document.getElementById('lanes&directions').scrollIntoView({behavior: 'smooth'});">Lanes & Directions</button>
+  <button type="button" class="chapter-jump" onclick="document.getElementById('mirroring').scrollIntoView({behavior: 'smooth'});">Mirroring</button>
+  <button type="button" class="chapter-jump" onclick="document.getElementById('main-lane').scrollIntoView({behavior: 'smooth'});">Main Lane</button>
+  <button type="button" class="chapter-jump" onclick="document.getElementById('gear-note-type').scrollIntoView({behavior: 'smooth'});">Gear [Note Type]</button>
+  <button type="button" class="chapter-jump" onclick="document.getElementById('masher-note-type').scrollIntoView({behavior: 'smooth'});">Masher [Note Type]</button>
+  <button type="button" class="chapter-jump" onclick="document.getElementById('journey').scrollIntoView({behavior: 'smooth'});">Journey</button>
   <button type="button" class="chapter-jump" onclick="document.getElementById('polyrhythm').scrollIntoView({behavior: 'smooth'});">Polyrhythm</button>
   <button type="button" class="chapter-jump" onclick="document.getElementById('small_mediums_animation').scrollIntoView({behavior: 'smooth'});">Small/Mediums Animation</button>
   <button type="button" class="chapter-jump" onclick="document.getElementById('boss').scrollIntoView({behavior: 'smooth'});">Boss</button>
   <button type="button" class="chapter-jump" onclick="document.getElementById('effects').scrollIntoView({behavior: 'smooth'});">Effects</button>
   <button type="button" class="chapter-jump" onclick="document.getElementById('overlaps').scrollIntoView({behavior: 'smooth'});">Overlaps</button>
   <button type="button" class="chapter-jump" onclick="document.getElementById('motifs').scrollIntoView({behavior: 'smooth'});">Motifs</button>
+  <button type="button" class="chapter-jump" onclick="document.getElementById('trivia').scrollIntoView({behavior: 'smooth'});">Trivia</button>
 </div>
 
 <hr style="margin: 64px auto;">
@@ -198,7 +379,7 @@ Check <a href="https://mdmc.moe/" target="_blank">MDMC website</a> and <a href="
 
 <h4>Offset with Audacity <img src="MDMC/Logos/Audacity_Logo.png" alt="Audacity_Logo" width="32px" height="32px"></h4>
 
-<p>Download <a href="https://www.audacityteam.org/">Audacity</a>
+<p>Download <a href="https://www.audacityteam.org/">Audacity</a></p>
 
 <h4>Chart File with 7-Zip <img src="MDMC/Logos/7-Zip_Logo.png" alt="Audacity_Logo" width="32px" height="32px"></h4>
 
@@ -221,7 +402,7 @@ You can also use WinRar but I don't recommend it cuz it has overcomplicated UI.<
 </p>
 
 <h2 id="seven-zip"> 7-Zip</h2>
-<p>7-Zip default format is 7z but you should use zip or it will make the game having trouble and crashes.<br>
+<p>7-Zip default format is 7z but you should use zip or it will make the game having trouble and crashes.</p>
 
 <img src="MDMC/7-Zip_zip_mdm.png" alt="7-Zip_zip_mdm">
 
@@ -253,36 +434,6 @@ Boss Notes: Boss Projectiles 1/2-3, Boss Gear, Boss Melees 1-2, Boss Mashers 1-2
 Pickables: Heart, <ruby>Beam Note<rt>(Blue Note)</rt></ruby><br>
 </div>
 
-<style>
-  .image-container {
-    --scale-factor: 0.3;
-  }
-
-  .image-container img {
-    width: calc(var(--original-width) * var(--scale-factor) * 1px);
-    height: auto;
-  }
-    
-  .image-container-b img {
-    width: calc(var(--original-width) * var(--scale-factor) * 2px);
-    height: auto;
-  }
-  
-  .image-container table td {
-    text-align: center;
-    width: max-content;
-    padding: 4px;
-  }
-  
-  .note-table-container {
-    display: none !important;
-  }
-  
-  .note-table-container.active {
-    display: block !important;
-  }
-</style>
-
 <label for="sceneSelect"><b>Select Scene:</b></label>
 <select id="sceneSelect" onchange="switchScene(this.value)" style="font-size: 1em; padding: 8px;">
   <option value="space-station">Space Station</option>
@@ -295,19 +446,6 @@ Pickables: Heart, <ruby>Beam Note<rt>(Blue Note)</rt></ruby><br>
   <option value="touhou">Touhou</option>
   <option value="djmax">DJMAX</option>
 </select>
-
-<script>
-  function switchScene(scene) {
-    document.querySelectorAll('.note-table-container').forEach(el => {
-      el.classList.remove('active');
-    });
-    document.getElementById(scene + '-table').classList.add('active');
-  }
-  
-  window.addEventListener('load', function() {
-    document.getElementById('space-station-table').classList.add('active');
-  });
-</script>
 
 <div id="space-station-table" class="image-container note-table-container">
 <table border="1" class="note-type">
@@ -956,7 +1094,7 @@ Here is the list of scene eggs:
 
 <hr style="margin: 64px auto;">
 
-<h3>Ranking</h3>
+<h2 id="notes-ranking">Notes Ranking</h2>
 
 <p>Lowest to Highest by Impact Power</p>
 
@@ -1001,7 +1139,7 @@ Level 5: Gemini, Raider(air)/Hammer(grnd), Masher, Boss Melees & Mashers<br>
 
 <hr style="margin: 64px auto;">
 
-<h3>Consider those Statements</h3>
+<h2 id="consider-those-statements">Consider those Statements</h2>
 
 <div style="display: flex; justify-content: space-between;">
 
@@ -1032,7 +1170,7 @@ Level 5: Gemini, Raider(air)/Hammer(grnd), Masher, Boss Melees & Mashers<br>
 
 <hr style="margin: 64px auto;">
 
-<h3>Measure Scale</h3>
+<h2 id="measure-scale">Measure Scale</h2>
 
 <div style="display: flex; flex-direction: row;">
 
@@ -1174,12 +1312,15 @@ That's for the structure quadruples turning triples which for the most part are 
 
 <hr style="margin: 64px auto;">
 
-<h3>Lanes & Directions</h3>
+<h2 id="lanes&directions">Lanes & Directions</h2>
 
 <p>Directions concern Smalls and Mediums,<br>
 As well as eventually [Raiders] and [Hammers] although they are fixed types.<br>
-[Raider] is animated down to up and [Hammer] up to down, reversal are a special case 97% not to be used.<br>
-Directions contain a difficulty value at reading!<br>
+[Raider] is animated down to up and [Hammer] up to down, reversal is a special case 97% not to be used.<br>
+Directions contain a difficulty enhancer at reading so be wise!<br>
+You must give a theme direction to your section and vary between section somewhere between each 4/8 bars in average.<br>
+[Ease]+[Cross] or [All Up]+[All Down] are compatible.<br>
+Here are the general view of it:</p>
 
 <table border="1" style="table-layout: fixed; width: 60%;">
   <thead>
@@ -1217,7 +1358,7 @@ Directions contain a difficulty value at reading!<br>
 
 <hr style="margin: 64px auto;">
 
-<h3>Mirroring</h3>
+<h2 id="mirroring">Mirroring</h2>
 
 <p>Ctrl+R is a shortcut to reverse the selected stuff [ground to air] and [air to ground].</p>
 
@@ -1226,7 +1367,7 @@ The lane swap for Pair Passive Impair Dynamic is done 2 times earlier, 4 times f
 We can count {Impair Passive} and {Pair Passive-Dynamic/Dynamic-Passive} as having this property but we can also mix up to able a total of 4x4 options.<br>
 <br>
 Basically it's one of the half measure consisting of a main lane and swapping to another with a balanced pair dynamic.
-If a measure main lane is A it goes like this:<br>
+If a measure main lane is A it goes like this:</p>
 
 <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; text-align: center;">
 
@@ -1240,13 +1381,13 @@ If a measure main lane is A it goes like this:<br>
   </thead>
   <tbody>
     <tr style="color: #00FFFF; font-size: x-large;">
-      <td></td>
+      <td>ㅤ</td>
       <td>BB</td>
-      <td></td>
+      <td>ㅤ</td>
     </tr>
     <tr style="color: #FF00FF; font-size: x-large;">
       <td>AAAA</td>
-      <td></td>
+      <td>ㅤ</td>
       <td>AA</td>
     </tr>
     <tr>
@@ -1267,17 +1408,17 @@ If a measure main lane is A it goes like this:<br>
   </thead>
   <tbody>
     <tr style="color: #00FFFF; font-size: x-large;">
-      <td></td>
+      <td>ㅤ</td>
       <td>B</td>
-      <td></td>
+      <td>ㅤ</td>
       <td>BB</td>
-      <td></td>
+      <td>ㅤ</td>
     </tr>
     <tr style="color: #FF00FF; font-size: x-large;">
       <td>AA</td>
-      <td></td>
+      <td>ㅤ</td>
       <td>A</td>
-      <td></td>
+      <td>ㅤ</td>
       <td>AA</td>
     </tr>
     <tr>
@@ -1295,6 +1436,227 @@ If a measure main lane is A it goes like this:<br>
 <p>By the way, geminis are considered "laneless" for its undecisive lane favorism and can cover loners notes.</p>
 <p>A long masher can personnally be considered as a full measure long.<br>
 I consider their ability to reset lane change making pure symmetry unconsequencial although that's only true if the next section isn't a repeating one.</p>
+
+<hr style="margin: 64px auto;">
+
+<h2 id="main-lane">Main Lane</h2>
+
+<p>To identify a main lane we look at bars location, those have the highest chance to trigger a main lane swap.<br>
+If there is gemini at it and isn't a fully gemini themed section then consider the main lane has been swapped for almost certainty.<br>
+You will see in [Pairs] main lane is the start point at the measure which define main lane.<br>
+On [Impairs], [Passive] have only one main lane which is the one with the highest density but on [Dynamic] it's reversed at half.</p>
+
+<div style="display: grid; grid-template-columns: 1fr 1fr 1fr; text-align: center;">
+
+<div>
+<table border="1" style="justify-content: center; width: 0.5em;">
+  <thead>
+    <tr>
+      <th>1st Measure</th>
+      <th>2nd Measure</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr style="color: #00FFFF; font-size: x-large;">
+      <td>ㅤ</td>
+      <td>BBBBBBBB</td>
+    </tr>
+    <tr style="color: #FF00FF; font-size: x-large;">
+      <td>AAAAAAAA</td>
+      <td>ㅤ</td>
+    </tr>
+    <tr>
+      <td>Grnd Main</td>
+      <td>Air Main</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div>
+<table border="1" style="justify-content: center; width: 0.5em;">
+  <thead>
+    <tr>
+      <th colspan="3">1st Measure</th>
+      <th colspan="3">2nd Measure</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr style="color: #00FFFF; font-size: x-large;">
+      <td>ㅤ</td>
+      <td>B</td>
+      <td>ㅤ</td>
+      <td>BBBB</td>
+      <td>ㅤ</td>
+      <td>BBB</td>
+    </tr>
+    <tr style="color: #FF00FF; font-size: x-large;">
+      <td>AAAA</td>
+      <td>ㅤ</td>
+      <td>AAA</td>
+      <td>ㅤ</td>
+      <td>A</td>
+      <td>ㅤ</td>
+    </tr>
+    <tr>
+      <td colspan="3">Grnd Main</td>
+      <td colspan="3">Air Main</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div>
+<table border="1" style="justify-content: center; width: 0.5em;">
+  <thead>
+    <tr>
+      <th colspan="6">1st Measure</th>
+      <th colspan="6">2nd Measure</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr style="color: #00FFFF; font-size: x-large;">
+      <td>G</td>
+      <td>B</td>
+      <td>ㅤ</td>
+      <td>B</td>
+      <td>ㅤ</td>
+      <td>BB</td>
+      <td>G</td>
+      <td>ㅤ</td>
+      <td>BB</td>
+      <td>ㅤ</td>
+      <td>B</td>
+      <td>ㅤ</td>
+    </tr>
+    <tr style="color: #FF00FF; font-size: x-large;">
+      <td>G</td>
+      <td>ㅤ</td>
+      <td>AA</td>
+      <td>ㅤ</td>
+      <td>A</td>
+      <td>ㅤ</td>
+      <td>G</td>
+      <td>A</td>
+      <td>ㅤ</td>
+      <td>A</td>
+      <td>ㅤ</td>
+      <td>AA</td>
+    </tr>
+    <tr>
+      <td colspan="3">Grnd Main</td>
+      <td colspan="3">Air Main</td>
+      <td colspan="3">Air Main</td>
+      <td colspan="3">Grnd Main</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+</div>
+
+<p>On the 3rd table, i added Geminis, u can ignore geminis and put 1st note of the 1st measure as [Grnd] start and 1st note of the 2nd measure as [Air] start.<br>
+  So gemini(and double holds) works like they are either laneless or double lanes because the swapping here is not made by an Impair value of lane swapping but gemini make the reversal more acceptable and less weird.</p>
+
+<div style="display: grid; grid-template-columns: 1fr 1fr 1fr; text-align: center;">
+
+<div>
+<table border="1" style="justify-content: center; width: 0.5em;">
+  <thead>
+    <tr>
+      <th colspan="3">1st Half Measure</th>
+      <th colspan="3">2nd Half Measure</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr style="color: #00FFFF; font-size: x-large;">
+      <td>ㅤ</td>
+      <td>B</td>
+      <td>ㅤ</td>
+      <td>B</td>
+      <td>ㅤ</td>
+      <td>BB</td>
+    </tr>
+    <tr style="color: #FF00FF; font-size: x-large;">
+      <td>A</td>
+      <td>ㅤ</td>
+      <td>AA</td>
+      <td>ㅤ</td>
+      <td>A</td>
+      <td>ㅤ</td>
+
+    </tr>
+    <tr>
+      <td colspan="3">Grnd Main</td>
+      <td colspan="3">Air Main</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div>
+<table border="1" style="justify-content: center; width: 0.5em;">
+  <thead>
+    <tr>
+      <th colspan="3">1st Half Measure</th>
+      <th colspan="3">2nd Half Measure</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr style="color: #00FFFF; font-size: x-large;">
+      <td>B</td>
+      <td>ㅤ</td>
+      <td>BB</td>
+      <td>ㅤ</td>
+      <td>B</td>
+      <td>ㅤ</td>
+    </tr>
+    <tr style="color: #FF00FF; font-size: x-large;">
+      <td>ㅤ</td>
+      <td>A</td>
+      <td>ㅤ</td>
+      <td>A</td>
+      <td>ㅤ</td>
+      <td>AA</td>
+    <tr>
+    </tr>
+      <td colspan="3">Air Main</td>
+      <td colspan="3">Grnd Main</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+</div>
+
+<p>We said previously that in a single hold, the main lane is the opposite, otherwise the tap note would clash if pretending the hold to be the main lane.<br>
+A double hold when there is a shorter one, we consider that this one is open to tap notes(not mentionning overlaps) which automatically prove it as the main lane.</p>
+
+<table border="1" style="justify-content: center; width: 0.5em;">
+  <thead>
+    <tr>
+      <th colspan="1">1st Half Measure</th>
+      <th colspan="2">2nd Half Measure</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr style="color: #00FFFF; font-size: x-large;">
+      <td>H======H</td>
+      <td style="text-align: right;">BBB</td>
+      <td>H==H</td>
+    </tr>
+    <tr style="color: #FF00FF; font-size: x-large;">
+      <td style="text-align: right;"><span style="opacity: 0.5">H==H</span>AAAA</td>
+      <td>H==H</td>
+      <td style="text-align: right;">AAA</td>
+    </tr>
+    <tr>
+      <td>Grnd Main</td>
+      <td>Air Main</td>
+      <td>Grnd Main</td>
+    </tr>
+  </tbody>
+</table>
 
 <hr style="margin: 64px auto;">
 
@@ -1500,7 +1862,7 @@ There are several types of holds arrangements and those are under certains trait
 
 <hr style="margin: 64px auto;">
 
-<h3>Gear [Note Type]</h3>
+<h2 id="gear-note-type">Gear [Note Type]</h2>
 
 Property/Use: Divider, Sudden Silence, Transition, Undefined Beat<br>
 Appearance Rate: Regular Frequency<br>
@@ -1515,7 +1877,7 @@ Gears are
 
 <hr style="margin: 64px auto;">
 
-<h3>Masher [Note Type]</h3>
+<h2 id="masher-note-type">Masher [Note Type]</h2>
 
 Property/Use: Divider, Special Beat, Undercharting, Space Things Up<br>
 Appearance Rate: Transition<br>
@@ -1524,7 +1886,11 @@ Appearance Rate: Transition<br>
 Masher on the ground lane is waiting for you.<br>
 Masher on the air lane is coming for you from the top.<br>
 <br>
-Masher tail should be spaced by one bold bar long especially for high BPM<br>
+Hold Ctrl and Shift and place note to get a 1 hit masher<br>
+Finishing section with air note then air masher is usually not the best option<br>
+Make the masher grnd or air based on the energy level of the song section<br>
+If there are raider(s) and hammer(s) think about to not abuse to much movements cuz grnd masher is more readable<br>
+Tail should be spaced by one bold bar long especially for BPM up to 180+, at 120 you can add 8th to it maybe.<br>
 The max tap Counter might be oscillating in game cuz of FPS drops</p>
 
 <h4>Align Hit Count with song Meaning</h4>
@@ -1561,7 +1927,7 @@ The max tap Counter might be oscillating in game cuz of FPS drops</p>
 
 <hr style="margin: 64px auto;">
 
-<h3>Journey</h3>
+<h2 id="journey">Journey</h2>
 
 <p>Section difficulties should feet the song intensity and the target difficulty.</p>
 <p>The start of a chart shouldn't be the hardest part even if the opening of the song is rough.</p>
@@ -1963,32 +2329,6 @@ When it collide to the floor on the ground [Bounce]<br>
 When the bullets spawn by each lane for each hand [Corners]<br>
 When the bullets spawn from the same point whatever its lane [Origin]<br>
 One is either [Straight] or [Bounce] and [Corners] or [Origin]<br>
-
-<style>
-.proj {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 6px;
-}
-
-.proj .imgs {
-  display: flex;
-  gap: 8px;
-  justify-content: center;
-}
-
-.proj img {
-  height: 24px;
-  width: auto;
-  image-rendering: pixelated;
-}
-
-.proj .label {
-  font-size: 0.85rem;
-  white-space: nowrap;
-}
-</style>
 
 <table border="1" style="text-align: center; margin: 64px auto;">
   <thead>
@@ -2525,12 +2865,12 @@ Motifs contain a proportionality regarding its arrangement:</p>
 
 <li>Motifs of 1 are used for extreme tension section, they are quite messy when put on 2 lanes simultaneously so more recommended for shorter sections.</li>
 <li>Motifs of 2 are the most balanced compromise between too much and too less they fit the perfect balance.</li>
-<li>Motifs of 3 are always free to use as long as the stream can fit a table of 6/12 and eventually progress to motifs of 2.</li>
+<li>Motifs of 3 are always free to use as long as the stream can fit a table of 6/12 or eventually progress to motifs of 2.</li>
 <li>Motifs of 4 are the least common and require extreme long sections, they are kinda brain dead.</li>
 
 <hr style="margin: 64px auto;">
 
-<h3>Trivia</h3>
+<h2 id="trivia">Trivia</h2>
 
 The old method for tap hold and tap masher was grid 256 (max grid) from the beginning to February 2024<br>
 ubmplay got replaced by Clone Dash all credits to @march on February 2026<br>
@@ -2538,128 +2878,6 @@ ubmplay got replaced by Clone Dash all credits to @march on February 2026<br>
 <hr style="margin: 64px auto;">
 
 </body>
-
-<style>
-  .chapter-nav {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-top: 12px;
-  }
-
-  .chapter-jump {
-    padding: 8px 12px;
-    border: 1px solid var(--table-border, #000);
-    border-radius: 999px;
-    background: transparent;
-    color: var(--text-color, #000);
-    cursor: pointer;
-    font-weight: 700;
-    transition: transform 0.15s ease, background-color 0.15s ease;
-  }
-
-  .chapter-jump:hover,
-  .chapter-jump:focus-visible {
-    background: rgba(255, 255, 255, 0.08);
-    transform: translateY(-1px);
-  }
-
-  .gif-play-all {
-    padding: 8px 14px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 999px;
-    background: rgba(255, 255, 255, 0.08);
-    color: inherit;
-    cursor: pointer;
-    font-weight: 700;
-  }
-
-  .gif-preview {
-    display: block;
-    transition: transform 0.15s ease;
-  }
-
-  .gif-preview:hover,
-  .gif-preview:focus-visible {
-    transform: scale(1.02);
-  }
-
-  .gif-play-button {
-    margin: 0 0 8px 10px;
-    padding: 7px 14px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 999px;
-    background: rgba(255, 255, 255, 0.08);
-    color: inherit;
-    cursor: pointer;
-    font-weight: 600;
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    vertical-align: top;
-  }
-
-  .gif-play-button:hover,
-  .gif-play-button:focus-visible,
-  .gif-play-all:hover,
-  .gif-play-all:focus-visible {
-    background: rgba(255, 255, 255, 0.16);
-  }
-
-  .gif-modal {
-    position: fixed;
-    inset: 0;
-    display: none;
-    align-items: center;
-    justify-content: center;
-    z-index: 9999;
-    padding: 24px;
-    background: rgba(0, 0, 0, 0.78);
-  }
-
-  .gif-modal.is-open {
-    display: flex;
-  }
-
-  .gif-modal-content {
-    position: relative;
-    max-width: min(92vw, 1400px);
-    max-height: 92vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: rgba(0, 0, 0, 0.3);
-    border-radius: 12px;
-    padding: 18px;
-    box-shadow: 0 18px 50px rgba(0, 0, 0, 0.45);
-  }
-
-  .gif-modal-image {
-    display: block;
-    max-width: 100%;
-    max-height: 92vh;
-    width: auto;
-    height: auto;
-    object-fit: contain;
-    border-radius: 8px;
-    background: #000;
-  }
-
-  .gif-modal-close {
-    position: absolute;
-    top: 10px;
-    right: 12px;
-    width: 36px;
-    height: 36px;
-    border: none;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.14);
-    color: #fff;
-    font-size: 1.6rem;
-    line-height: 1;
-    cursor: pointer;
-  }
-</style>
 
 <div id="gifModal" class="gif-modal" aria-hidden="true">
   <div class="gif-modal-content">
@@ -2669,6 +2887,18 @@ ubmplay got replaced by Clone Dash all credits to @march on February 2026<br>
 </div>
 
 <script>
+  function switchScene(scene) {
+    document.querySelectorAll('.note-table-container').forEach(el => {
+      el.classList.remove('active');
+    });
+    document.getElementById(scene + '-table').classList.add('active');
+  }
+  
+  window.addEventListener('load', function() {
+    document.getElementById('space-station-table').classList.add('active');
+  });
+
+
   document.addEventListener('DOMContentLoaded', function () {
     const savedTheme = localStorage.getItem('theme') || 'light';
     document.documentElement.setAttribute('data-theme', savedTheme);
